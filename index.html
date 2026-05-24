@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nephy — Personal & Shared Budgets on iOS</title>
+  <meta name="description" content="Nephy is an elegant iOS budgeting and expense tracking app. Keep your personal budget private, sync couple expenses via iCloud, and track your financial weather.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Header & Navigation -->
+  <header>
+    <div class="container nav-wrapper">
+      <a href="#" class="logo">
+        <div class="logo-icon">
+          <!-- Inline App Icon SVG -->
+          <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="logoGradLight" x1="0.5" y1="1" x2="0.5" y2="0.3">
+                <stop offset="0%" stop-color="#9FD9F7" />
+                <stop offset="100%" stop-color="#D8F2FF" />
+              </linearGradient>
+              <linearGradient id="logoGradDark" x1="0.5" y1="1" x2="0.5" y2="0.3">
+                <stop offset="0%" stop-color="#050A14" />
+                <stop offset="100%" stop-color="#123446" />
+              </linearGradient>
+            </defs>
+            <rect class="logo-bg" width="120" height="120" rx="26" fill="url(#logoGradLight)"/>
+            <g transform="translate(15, 15) scale(1.5)">
+              <g class="logo-sun" fill="#C97812">
+                <path d="M17 12C17 14.7614 14.7614 17 12 17C9.23858 17 7 14.7614 7 12C7 9.23858 9.23858 7 12 7C14.7614 7 17 9.23858 17 12Z" />
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M12 1.25C12.4142 1.25 12.75 1.58579 12.75 2V4C12.75 4.41421 12.4142 4.75 12 4.75C11.5858 4.75 11.25 4.41421 11.25 4V2C11.25 1.58579 11.5858 1.25 12 1.25ZM3.66865 3.71609C3.94815 3.41039 4.42255 3.38915 4.72825 3.66865L6.95026 5.70024C7.25596 5.97974 7.2772 6.45413 6.9977 6.75983C6.7182 7.06553 6.2438 7.08677 5.9381 6.80727L3.71609 4.77569C3.41039 4.49619 3.38915 4.02179 3.66865 3.71609ZM20.3314 3.71609C20.6109 4.02179 20.5896 4.49619 20.2839 4.77569L18.0619 6.80727C17.7562 7.08677 17.2818 7.06553 17.0023 6.75983C16.7228 6.45413 16.744 5.97974 17.0497 5.70024L19.2718 3.66865C19.5775 3.38915 20.0518 3.41039 20.3314 3.71609ZM1.25 12C1.25 11.5858 1.58579 11.25 2 11.25H4C4.41421 11.25 4.75 11.5858 4.75 12C4.75 12.4142 4.41421 12.75 4 12.75H2C1.58579 12.75 1.25 12.4142 1.25 12ZM19.25 12C19.25 11.5858 19.5858 11.25 20 11.25H22C22.4142 11.25 22.75 11.5858 22.75 12C22.75 12.4142 22.4142 12.75 22 12.75H20C19.5858 12.75 19.25 12.4142 19.25 12ZM17.0255 17.0252C17.3184 16.7323 17.7933 16.7323 18.0862 17.0252L20.3082 19.2475C20.6011 19.5404 20.601 20.0153 20.3081 20.3082C20.0152 20.6011 19.5403 20.601 19.2475 20.3081L17.0255 18.0858C16.7326 17.7929 16.7326 17.3181 17.0255 17.0252ZM6.97467 17.0253C7.26756 17.3182 7.26756 17.7931 6.97467 18.086L4.75244 20.3082C4.45955 20.6011 3.98468 20.6011 3.69178 20.3082C3.39889 20.0153 3.39889 19.5404 3.69178 19.2476L5.91401 17.0253C6.2069 16.7324 6.68177 16.7324 6.97467 17.0253ZM12 19.25C12.4142 19.25 12.75 19.5858 12.75 20V22C12.75 22.4142 12.4142 22.75 12 22.75C11.5858 22.75 11.25 22.4142 11.25 22V20C11.25 19.5858 11.5858 19.25 12 19.25Z" />
+              </g>
+              <g transform="translate(6, 6) scale(0.28)">
+                <path class="logo-coin-base" fill="#E7b85f" d="M22,44C9.869,44,0,34.131,0,22S9.869,0,22,0s22,9.869,22,22S34.131,44,22,44z"/>
+                <path class="logo-coin-slot" fill="#C97812" d="M22.745,32h-1.491C20.009,32,19,30.991,19,29.745V13.255C19,12.009,20.009,11,21.255,11h1.491 C23.991,11,25,12.009,25,13.255v16.491C25,30.991,23.991,32,22.745,32z"/>
+              </g>
+            </g>
+          </svg>
+        </div>
+        <span>Nephy</span>
+      </a>
+
+      <nav class="nav-links">
+        <a href="#features" data-i18n="nav-features">Features</a>
+        <a href="#how-it-works" data-i18n="nav-how-it-works">How It Works</a>
+        <a href="#download" class="btn btn-secondary" data-i18n="nav-download">Download App</a>
+      </nav>
+
+      <div class="controls-group">
+        <!-- Language Switcher -->
+        <button class="lang-switch" id="langToggle">FR</button>
+        
+        <!-- Dark Mode Toggle Button -->
+        <button class="icon-btn" id="themeToggle" aria-label="Toggle dark mode">
+          <!-- Moon Icon (displayed in light mode) -->
+          <svg class="icon-moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+          <!-- Sun Icon (displayed in dark mode) -->
+          <svg class="icon-sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: none;">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container hero-grid">
+      <div class="hero-content">
+        <h1 data-i18n="hero-title">Weather your finances with <span>Nephy</span>.</h1>
+        <p data-i18n="hero-subtitle">The elegant personal finance app that syncs shared expenses with your partner. Keep personal spending private, split household costs 50/50, and monitor your budget health visually.</p>
+        <div class="hero-ctas">
+          <a href="#features" class="btn btn-primary" data-i18n="hero-cta-primary">Explore Features</a>
+          <a href="#how-it-works" class="btn btn-secondary" data-i18n="hero-cta-secondary">Learn More</a>
+        </div>
+        
+        <div class="app-store-badges">
+          <a href="#" class="app-store-badge">
+            <!-- App Store badge fallback using visual placeholder or clean official logo representation -->
+            <svg width="135" height="40" viewBox="0 0 135 40" fill="none" xmlns="http://www.w3.org/2000/svg" style="background:#000; border-radius: 6px; padding: 5px 10px;">
+              <!-- Simple elegant custom App Store drawing -->
+              <path d="M16.5 12C16.5 7.5 20.5 5 20.5 5C18 7.5 15.5 8 14.5 8.5C12 9.5 9 12 9 15.5C9 21.5 14.5 29.5 18 29.5C20.5 29.5 21.5 28.5 23.5 28.5C25.5 28.5 26.5 29.5 28.5 29.5C31.5 29.5 35 24 35 20.5C29.5 19.5 27 15.5 27.5 13C28 10 30.5 7.5 33.5 7C32.5 5 30 4 27.5 4C23.5 4 21.5 6 20 6C18.5 6 16.5 4.5 13 4.5C7.5 4.5 2 9.5 2 16C2 24.5 8.5 33.5 13.5 33.5C16 33.5 17 32.5 19.5 32.5C22 32.5 23 33.5 25.5 33.5C31 33.5 38 24.5 38 16.5C38 16.5 38 12 16.5 12Z" fill="white"/>
+              <path d="M26.5 2.5C28 1 29 0 29 0C29 0 27.5 1 26 2.5C24.5 4 24 5.5 24 5.5C24 5.5 25 4 26.5 2.5Z" fill="white"/>
+              <text x="45" y="18" fill="white" font-family="-apple-system, sans-serif" font-size="9" font-weight="600">Download on the</text>
+              <text x="45" y="30" fill="white" font-family="-apple-system, sans-serif" font-size="13" font-weight="bold">App Store</text>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- iPhone Dashboard Mockup -->
+      <div class="iphone-container">
+        <div class="iphone-frame">
+          <div class="iphone-notch"></div>
+          
+          <div class="status-bar">
+            <span>9:41</span>
+            <div class="status-icons">
+              <span class="status-icon">📶</span>
+              <span class="status-icon">🔋</span>
+            </div>
+          </div>
+
+          <!-- iPhone App Screen -->
+          <div class="iphone-screen" id="iphoneScreen">
+            <div class="phone-header">
+              <h2 data-i18n="phone-title">Dashboard</h2>
+              <span class="phone-header-icon">⚙️</span>
+            </div>
+
+            <div class="month-capsule" id="currentMonth">May 2026</div>
+
+            <!-- Financial Weather Widget -->
+            <div class="weather-widget" id="weatherWidget" style="--weather-accent: var(--weather-st-accent); --weather-gradient-1: var(--weather-st-gradient-1); --weather-gradient-2: var(--weather-st-gradient-2);">
+              <div class="weather-icon-wrapper" id="weatherIcon">⛅</div>
+              <div class="weather-info">
+                <span class="weather-title" id="weatherTitle" data-i18n="widget-title-stable">On track</span>
+                <span class="weather-message" id="weatherMessage" data-i18n="widget-msg-stable">You are moving steadily</span>
+                <span class="weather-detail" id="weatherDetail">CHF 310.50 spent this month</span>
+              </div>
+            </div>
+
+            <!-- Budget Pressure Summary Card -->
+            <div class="phone-card">
+              <div class="phone-card-title">
+                <span data-i18n="widget-budget-pressure">Budget Pressure</span>
+                <span class="phone-card-subtitle" data-i18n="widget-monthly">Monthly</span>
+              </div>
+              <div class="budget-pressure-list">
+                <!-- Groceries Progress -->
+                <div class="budget-progress-row">
+                  <div class="budget-progress-meta">
+                    <span data-i18n="cat-groceries">Groceries</span>
+                    <span class="budget-amt-lbl" id="groceriesSpent">CHF 180.00 / CHF 400.00</span>
+                  </div>
+                  <div class="budget-progress-bar-container">
+                    <div class="budget-progress-bar" id="groceriesProgress" style="width: 45%;"></div>
+                  </div>
+                  <div class="budget-progress-label" id="groceriesRemaining" data-i18n="remaining-stable-groceries">CHF 220.00 remaining</div>
+                </div>
+
+                <!-- Restaurants Progress -->
+                <div class="budget-progress-row">
+                  <div class="budget-progress-meta">
+                    <span data-i18n="cat-dining">Restaurants & Coffee</span>
+                    <span class="budget-amt-lbl" id="restaurantsSpent">CHF 95.00 / CHF 150.00</span>
+                  </div>
+                  <div class="budget-progress-bar-container">
+                    <div class="budget-progress-bar orange" id="restaurantsProgress" style="width: 63%;"></div>
+                  </div>
+                  <div class="budget-progress-label" id="restaurantsRemaining" data-i18n="remaining-stable-dining">CHF 55.00 remaining</div>
+                </div>
+
+                <!-- Subscriptions Progress -->
+                <div class="budget-progress-row">
+                  <div class="budget-progress-meta">
+                    <span data-i18n="cat-subscriptions">Subscriptions</span>
+                    <span class="budget-amt-lbl" id="subscriptionsSpent">CHF 35.50 / CHF 50.00</span>
+                  </div>
+                  <div class="budget-progress-bar-container">
+                    <div class="budget-progress-bar" id="subscriptionsProgress" style="width: 71%;"></div>
+                  </div>
+                  <div class="budget-progress-label" id="subscriptionsRemaining" data-i18n="remaining-stable-subscriptions">CHF 14.50 remaining</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Category Summary Grid -->
+            <div class="phone-card">
+              <div class="phone-card-title" data-i18n="widget-spending">Spending Summary</div>
+              <div class="category-summary-grid">
+                <div class="category-chip cat-groceries">
+                  <span class="category-dot" style="background:#13886F;"></span>
+                  <span data-i18n="cat-groceries">Groceries</span>
+                  <span class="category-amt" id="catAmtGroceries">CHF 180.00</span>
+                </div>
+                <div class="category-chip cat-dining">
+                  <span class="category-dot" style="background:#B86614;"></span>
+                  <span data-i18n="cat-dining">Restaurants</span>
+                  <span class="category-amt" id="catAmtDining">CHF 95.00</span>
+                </div>
+                <div class="category-chip cat-transport">
+                  <span class="category-dot" style="background:#2B75B8;"></span>
+                  <span data-i18n="cat-transport">Transport</span>
+                  <span class="category-amt" id="catAmtTransport">CHF 30.10</span>
+                </div>
+                <div class="category-chip cat-subscriptions">
+                  <span class="category-dot" style="background:#B95586;"></span>
+                  <span data-i18n="cat-subscriptions">Subs</span>
+                  <span class="category-amt" id="catAmtSubs">CHF 35.50</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Dashboard Controller for Mockup -->
+        <div class="mockup-controls">
+          <button class="control-tab" data-state="excellent" id="tabExcellent">☀️ <span data-i18n="tab-safe">Safe</span></button>
+          <button class="control-tab active" data-state="stable" id="tabStable">⛅ <span data-i18n="tab-track">On Track</span></button>
+          <button class="control-tab" data-state="warning" id="tabWarning">🌧️ <span data-i18n="tab-warning">Warning</span></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section id="features">
+    <div class="container">
+      <div class="features-title-container">
+        <h2 data-i18n="features-section-title">Designed for Your Financial Wellness</h2>
+        <p data-i18n="features-section-subtitle">Nephy brings smart, beautiful, and secure budgeting layouts to your phone, keeping you aligned on what matters.</p>
+      </div>
+
+      <div class="features-grid">
+        <!-- Feature 1: Me vs Couple Split -->
+        <div class="feature-card">
+          <div class="feature-icon">👥</div>
+          <h3 data-i18n="feat-split-title">Me vs. Couple Splits</h3>
+          <p data-i18n="feat-split-desc">Keep personal expenses private, and mark household costs as shared with a single tap. Couple expenses are automatically split 50/50, so only your half impacts your personal budget.</p>
+          
+          <!-- Interactive Widget: Calculator -->
+          <div class="calc-container">
+            <div class="form-group">
+              <label for="calcAmount" data-i18n="calc-bill-amount">Bill Amount</label>
+              <div class="input-wrapper">
+                <span class="input-currency">CHF</span>
+                <input type="number" id="calcAmount" class="form-input" value="120.00" min="0" step="10">
+              </div>
+            </div>
+            <div class="form-group" style="margin-bottom: 0;">
+              <label class="checkbox-label">
+                <input type="checkbox" id="calcShared" checked>
+                <span data-i18n="calc-shared-checkbox">Shared with Partner (50% Split)</span>
+              </label>
+            </div>
+            
+            <div class="calc-results">
+              <div class="calc-res-box">
+                <span class="calc-res-title" data-i18n="calc-your-share">Your Share</span>
+                <div class="calc-res-value accent" id="resYourShare">CHF 60.00</div>
+              </div>
+              <div class="calc-res-box">
+                <span class="calc-res-title" data-i18n="calc-partner-share">Partner Share</span>
+                <div class="calc-res-value" id="resPartnerShare">CHF 60.00</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Feature 2: Smart Auto-Categorization -->
+        <div class="feature-card">
+          <div class="feature-icon">🏷️</div>
+          <h3 data-i18n="feat-cat-title">Smart Keyword Auto-Categorization</h3>
+          <p data-i18n="feat-cat-desc">Type a merchant and watch it classify itself. Nephy matches user-defined keywords (like 'Migros' or 'Spotify') to automatically assign categories and styles, making tracking effortless.</p>
+          
+          <!-- Interactive Widget: Keyword Sandbox -->
+          <div class="keyword-sandbox">
+            <div class="suggestions">
+              <span class="suggestion-chip">Migros</span>
+              <span class="suggestion-chip">Spotify</span>
+              <span class="suggestion-chip">SBB Ticket</span>
+              <span class="suggestion-chip">Starbucks</span>
+              <span class="suggestion-chip">Netflix</span>
+            </div>
+            <div class="form-group" style="margin-bottom: 0;">
+              <label for="sandboxInput" data-i18n="calc-type-merchant">Try typing a store name</label>
+              <input type="text" id="sandboxInput" class="form-input keyword-input" placeholder="e.g. Migros, Coop, Netflix..." value="Migros">
+            </div>
+            <div class="tag-result matched cat-groceries" id="sandboxResult">
+              🏷️ <span id="matchedCategory">Groceries</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Feature 3: iCloud Sync & Sharing -->
+        <div class="feature-card">
+          <div class="feature-icon">☁️</div>
+          <h3 data-i18n="feat-sync-title">iCloud Sync & Sharing</h3>
+          <p data-i18n="feat-sync-desc">Secure, real-time synchronization between your Apple devices and your partner's. Nephy uses Apple's native iCloud sharing, which means no accounts to create and absolute privacy.</p>
+          
+          <!-- Visual Widget: iCloud Graph -->
+          <div class="icloud-graphic">
+            <div class="phone-wireframe">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+            </div>
+            <div class="sync-line left">
+              <div class="sync-pulse"></div>
+            </div>
+            <div class="icloud-cloud">☁️</div>
+            <div class="sync-line right">
+              <div class="sync-pulse" style="animation-delay: 1s;"></div>
+            </div>
+            <div class="phone-wireframe">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+            </div>
+          </div>
+        </div>
+
+        <!-- Feature 4: Visual Financial Weather -->
+        <div class="feature-card">
+          <div class="feature-icon">☀️</div>
+          <h3 data-i18n="feat-weather-title">Visual Financial Weather</h3>
+          <p data-i18n="feat-weather-desc">Dry numbers are hard to digest. Nephy introduces 'Financial Weather' to translate your current budget limits into sunny, cloudy, or rainy status indicators so you know your financial state at a glance.</p>
+          
+          <div class="timeline" style="margin-top: 10px; width: 100%;">
+            <div class="weather-widget" style="--weather-accent: var(--weather-ex-accent); --weather-gradient-1: var(--weather-ex-gradient-1); --weather-gradient-2: var(--weather-ex-gradient-2); pointer-events: none; min-height: auto; padding: 12px 16px;">
+              <div class="weather-icon-wrapper" style="font-size: 32px; width: 44px; height: 44px;">☀️</div>
+              <div class="weather-info">
+                <span class="weather-title" style="font-size: 15px;" data-i18n="widget-title-excellent">Safe to spend</span>
+                <span class="weather-message" style="font-size: 12px;" data-i18n="widget-msg-excellent">Looking good this month</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works Section -->
+  <section id="how-it-works" style="background-color: var(--section-bg); border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color);">
+    <div class="container">
+      <div class="features-title-container">
+        <h2 data-i18n="how-section-title">Setting Up Nephy in 4 Steps</h2>
+        <p data-i18n="how-section-subtitle">Get started quickly and experience visual finance sync built right into Apple's ecosystem.</p>
+      </div>
+
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-badge">1</div>
+          <div class="timeline-content">
+            <h3 data-i18n="step1-title">Add Categories & Keywords</h3>
+            <p data-i18n="step1-desc">Create your custom categories (Groceries, Dining, Transport) and assign keyword triggers to detect merchants automatically.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-badge">2</div>
+          <div class="timeline-content">
+            <h3 data-i18n="step2-title">Set Private Budgets</h3>
+            <p data-i18n="step2-desc">Define your spending limits per category. Only your individual share will calculate towards these limits, leaving you in total control.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-badge">3</div>
+          <div class="timeline-content">
+            <h3 data-i18n="step3-title">Mark & Sync Couple Costs</h3>
+            <p data-i18n="step3-desc">As expenses happen, tap 'Couple' for shared bills. Nephy automatically divides the expense and syncs the records securely with your partner via iCloud.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-badge">4</div>
+          <div class="timeline-content">
+            <h3 data-i18n="step4-title">Watch Your Weather</h3>
+            <p data-i18n="step4-desc">Open the dashboard to review your financial health. Sunny weather lets you know you are safe to spend, while showers suggest caution.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bottom CTA / Download Section -->
+  <section id="download" class="download-section">
+    <div class="container download-wrapper">
+      <h2 data-i18n="dl-title">Start Weathering Your Budget</h2>
+      <p data-i18n="dl-subtitle">Take control of your personal budget, align on couple spending, and experience beautiful, secure finance tracking today.</p>
+      <div class="download-badge-container">
+        <a href="#" class="app-store-badge">
+          <svg width="135" height="40" viewBox="0 0 135 40" fill="none" xmlns="http://www.w3.org/2000/svg" style="background:#000; border-radius: 6px; padding: 5px 10px;">
+            <path d="M16.5 12C16.5 7.5 20.5 5 20.5 5C18 7.5 15.5 8 14.5 8.5C12 9.5 9 12 9 15.5C9 21.5 14.5 29.5 18 29.5C20.5 29.5 21.5 28.5 23.5 28.5C25.5 28.5 26.5 29.5 28.5 29.5C31.5 29.5 35 24 35 20.5C29.5 19.5 27 15.5 27.5 13C28 10 30.5 7.5 33.5 7C32.5 5 30 4 27.5 4C23.5 4 21.5 6 20 6C18.5 6 16.5 4.5 13 4.5C7.5 4.5 2 9.5 2 16C2 24.5 8.5 33.5 13.5 33.5C16 33.5 17 32.5 19.5 32.5C22 32.5 23 33.5 25.5 33.5C31 33.5 38 24.5 38 16.5C38 16.5 38 12 16.5 12Z" fill="white"/>
+            <path d="M26.5 2.5C28 1 29 0 29 0C29 0 27.5 1 26 2.5C24.5 4 24 5.5 24 5.5C24 5.5 25 4 26.5 2.5Z" fill="white"/>
+            <text x="45" y="18" fill="white" font-family="-apple-system, sans-serif" font-size="9" font-weight="600">Download on the</text>
+            <text x="45" y="30" fill="white" font-family="-apple-system, sans-serif" font-size="13" font-weight="bold">App Store</text>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container footer-grid">
+      <a href="#" class="logo">
+        <span>Nephy</span>
+      </a>
+      <div class="footer-links">
+        <a href="#" data-i18n="footer-privacy">Privacy Policy</a>
+        <a href="#" data-i18n="footer-terms">Terms of Service</a>
+        <a href="#" data-i18n="footer-support">Support</a>
+      </div>
+      <div class="copyright">
+        &copy; 2026 Nephy App. <span data-i18n="footer-rights">All rights reserved.</span> Created by Remy Berguerand.
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
