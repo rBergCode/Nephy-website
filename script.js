@@ -117,7 +117,8 @@ const translations = {
     "dl-subtitle": "Take control of your personal budget, align on couple spending, and experience beautiful, secure finance tracking today.",
     "footer-privacy": "Privacy Policy",
     "footer-support": "Support",
-    "footer-rights": "All rights reserved."
+    "footer-rights": "All rights reserved.",
+    "footer-created-by": "Created by the Nephy team."
   },
   fr: {
     // Navigation
@@ -236,7 +237,8 @@ const translations = {
     "dl-subtitle": "Gérez vos limites privées, coordonnez vos dépenses de couple et découvrez un suivi budgétaire fluide et confidentiel dès aujourd'hui.",
     "footer-privacy": "Charte de Confidentialité",
     "footer-support": "Support Technique",
-    "footer-rights": "Tous droits réservés."
+    "footer-rights": "Tous droits réservés.",
+    "footer-created-by": "Créé par l'équipe Nephy."
   }
 };
 
