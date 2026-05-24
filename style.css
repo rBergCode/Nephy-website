@@ -869,7 +869,7 @@ body.dark .cat-uncategorized {
 
 .form-input {
   width: 100%;
-  padding: 12px 12px 12px 28px;
+  padding: 12px 12px 12px 52px;
   border-radius: 20px;
   border: 1px solid var(--border-color);
   background-color: var(--surface);

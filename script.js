@@ -116,14 +116,13 @@ const translations = {
     "dl-title": "Start Weathering Your Budget",
     "dl-subtitle": "Take control of your personal budget, align on couple spending, and experience beautiful, secure finance tracking today.",
     "footer-privacy": "Privacy Policy",
-    "footer-terms": "Terms of Service",
     "footer-support": "Support",
     "footer-rights": "All rights reserved."
   },
   fr: {
     // Navigation
     "nav-features": "Fonctionnalités",
-    "nav-how-it-works": "Fonctionnement",
+    "nav-how-it-works": "Comment ça marche",
     "nav-download": "Télécharger l'app",
     
     // Hero
@@ -236,7 +235,6 @@ const translations = {
     "dl-title": "Démarrez votre Météo Budgétaire",
     "dl-subtitle": "Gérez vos limites privées, coordonnez vos dépenses de couple et découvrez un suivi budgétaire fluide et confidentiel dès aujourd'hui.",
     "footer-privacy": "Charte de Confidentialité",
-    "footer-terms": "Conditions d'Utilisation",
     "footer-support": "Support Technique",
     "footer-rights": "Tous droits réservés."
   }
