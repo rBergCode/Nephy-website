@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Nephy — Personal & Shared Budgets on iOS</title>
-  <meta name="description" content="Nephy is an elegant iOS budgeting and expense tracking app. Keep your personal budget private, sync couple expenses via iCloud, and track your financial weather.">
+  <meta name="description" content="Nephy is an elegant iOS budgeting and expense tracking app. Sync personal and couple expenses via iCloud with your partner, and track your financial weather.">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -80,7 +80,7 @@
     <div class="container hero-grid">
       <div class="hero-content">
         <h1 data-i18n="hero-title">Weather your finances with <span>Nephy</span>.</h1>
-        <p data-i18n="hero-subtitle">The elegant personal finance app that syncs shared expenses with your partner. Keep personal spending private, split household costs 50/50, and monitor your budget health visually.</p>
+        <p data-i18n="hero-subtitle">The elegant personal finance app that syncs all your expenses in real-time with your partner. Track personal and shared spending together, split household costs 50/50, and monitor your budget health visually.</p>
         <div class="hero-ctas">
           <a href="#features" class="btn btn-primary" data-i18n="hero-cta-primary">Explore Features</a>
           <a href="#how-it-works" class="btn btn-secondary" data-i18n="hero-cta-secondary">Learn More</a>
@@ -98,112 +98,10 @@
         <div class="iphone-frame">
           <div class="iphone-notch"></div>
           
-          <div class="status-bar">
-            <span>9:41</span>
-            <div class="status-icons">
-              <span class="status-icon">📶</span>
-              <span class="status-icon">🔋</span>
-            </div>
+          <!-- iPhone App Screen showing Preview Screenshot -->
+          <div class="iphone-screen-screenshot">
+            <img id="dashboardScreenshot" src="Dashboard_en_light.PNG" alt="Nephy Dashboard Preview" class="iphone-screenshot-img">
           </div>
-
-          <!-- iPhone App Screen -->
-          <div class="iphone-screen" id="iphoneScreen">
-            <div class="phone-header">
-              <h2 data-i18n="phone-title">Dashboard</h2>
-              <span class="phone-header-icon">⚙️</span>
-            </div>
-
-            <div class="month-capsule" id="currentMonth">May 2026</div>
-
-            <!-- Financial Weather Widget -->
-            <div class="weather-widget" id="weatherWidget" style="--weather-accent: var(--weather-st-accent); --weather-gradient-1: var(--weather-st-gradient-1); --weather-gradient-2: var(--weather-st-gradient-2);">
-              <div class="weather-icon-wrapper" id="weatherIcon">⛅</div>
-              <div class="weather-info">
-                <span class="weather-title" id="weatherTitle" data-i18n="widget-title-stable">On track</span>
-                <span class="weather-message" id="weatherMessage" data-i18n="widget-msg-stable">You are moving steadily</span>
-                <span class="weather-detail" id="weatherDetail">CHF 310.50 spent this month</span>
-              </div>
-            </div>
-
-            <!-- Budget Pressure Summary Card -->
-            <div class="phone-card">
-              <div class="phone-card-title">
-                <span data-i18n="widget-budget-pressure">Budget Pressure</span>
-                <span class="phone-card-subtitle" data-i18n="widget-monthly">Monthly</span>
-              </div>
-              <div class="budget-pressure-list">
-                <!-- Groceries Progress -->
-                <div class="budget-progress-row">
-                  <div class="budget-progress-meta">
-                    <span data-i18n="cat-groceries">Groceries</span>
-                    <span class="budget-amt-lbl" id="groceriesSpent">CHF 180.00 / CHF 400.00</span>
-                  </div>
-                  <div class="budget-progress-bar-container">
-                    <div class="budget-progress-bar" id="groceriesProgress" style="width: 45%;"></div>
-                  </div>
-                  <div class="budget-progress-label" id="groceriesRemaining" data-i18n="remaining-stable-groceries">CHF 220.00 remaining</div>
-                </div>
-
-                <!-- Restaurants Progress -->
-                <div class="budget-progress-row">
-                  <div class="budget-progress-meta">
-                    <span data-i18n="cat-dining">Restaurants & Coffee</span>
-                    <span class="budget-amt-lbl" id="restaurantsSpent">CHF 95.00 / CHF 150.00</span>
-                  </div>
-                  <div class="budget-progress-bar-container">
-                    <div class="budget-progress-bar orange" id="restaurantsProgress" style="width: 63%;"></div>
-                  </div>
-                  <div class="budget-progress-label" id="restaurantsRemaining" data-i18n="remaining-stable-dining">CHF 55.00 remaining</div>
-                </div>
-
-                <!-- Subscriptions Progress -->
-                <div class="budget-progress-row">
-                  <div class="budget-progress-meta">
-                    <span data-i18n="cat-subscriptions">Subscriptions</span>
-                    <span class="budget-amt-lbl" id="subscriptionsSpent">CHF 35.50 / CHF 50.00</span>
-                  </div>
-                  <div class="budget-progress-bar-container">
-                    <div class="budget-progress-bar" id="subscriptionsProgress" style="width: 71%;"></div>
-                  </div>
-                  <div class="budget-progress-label" id="subscriptionsRemaining" data-i18n="remaining-stable-subscriptions">CHF 14.50 remaining</div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Category Summary Grid -->
-            <div class="phone-card">
-              <div class="phone-card-title" data-i18n="widget-spending">Spending Summary</div>
-              <div class="category-summary-grid">
-                <div class="category-chip cat-groceries">
-                  <span class="category-dot" style="background:#13886F;"></span>
-                  <span data-i18n="cat-groceries">Groceries</span>
-                  <span class="category-amt" id="catAmtGroceries">CHF 180.00</span>
-                </div>
-                <div class="category-chip cat-dining">
-                  <span class="category-dot" style="background:#B86614;"></span>
-                  <span data-i18n="cat-dining">Restaurants</span>
-                  <span class="category-amt" id="catAmtDining">CHF 95.00</span>
-                </div>
-                <div class="category-chip cat-transport">
-                  <span class="category-dot" style="background:#2B75B8;"></span>
-                  <span data-i18n="cat-transport">Transport</span>
-                  <span class="category-amt" id="catAmtTransport">CHF 30.10</span>
-                </div>
-                <div class="category-chip cat-subscriptions">
-                  <span class="category-dot" style="background:#B95586;"></span>
-                  <span data-i18n="cat-subscriptions">Subs</span>
-                  <span class="category-amt" id="catAmtSubs">CHF 35.50</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Dashboard Controller for Mockup -->
-        <div class="mockup-controls">
-          <button class="control-tab" data-state="excellent" id="tabExcellent">☀️ <span data-i18n="tab-safe">Safe</span></button>
-          <button class="control-tab active" data-state="stable" id="tabStable">⛅ <span data-i18n="tab-track">On Track</span></button>
-          <button class="control-tab" data-state="warning" id="tabWarning">🌧️ <span data-i18n="tab-warning">Warning</span></button>
         </div>
       </div>
     </div>
@@ -221,8 +119,8 @@
         <!-- Feature 1: Me vs Couple Split -->
         <div class="feature-card">
           <div class="feature-icon">👥</div>
-          <h3 data-i18n="feat-split-title">Me vs. Couple Splits</h3>
-          <p data-i18n="feat-split-desc">Keep personal expenses private, and mark household costs as shared with a single tap. Couple expenses are automatically split 50/50, so only your half impacts your personal budget.</p>
+          <h3 data-i18n="feat-split-title">Personal & Couple Expenses</h3>
+          <p data-i18n="feat-split-desc">Track both individual and shared costs in one shared space. Easily mark household costs as shared to split them 50/50, with both of you having full visibility.</p>
           
           <!-- Interactive Widget: Calculator -->
           <div class="calc-container">
@@ -273,7 +171,7 @@
               <input type="text" id="sandboxInput" class="form-input keyword-input" placeholder="e.g. Migros, Coop, Netflix..." value="Migros">
             </div>
             <div class="tag-result matched cat-groceries" id="sandboxResult">
-              🏷️ <span id="matchedCategory">Groceries</span>
+              <span id="matchedCategory">Groceries</span>
             </div>
           </div>
         </div>
@@ -308,12 +206,51 @@
           <h3 data-i18n="feat-weather-title">Visual Financial Weather</h3>
           <p data-i18n="feat-weather-desc">Dry numbers are hard to digest. Nephy introduces 'Financial Weather' to translate your current budget limits into sunny, cloudy, or rainy status indicators so you know your financial state at a glance.</p>
           
-          <div style="margin-top: 10px; width: 100%;">
-            <div class="weather-widget" style="--weather-accent: var(--weather-ex-accent); --weather-gradient-1: var(--weather-ex-gradient-1); --weather-gradient-2: var(--weather-ex-gradient-2); pointer-events: none; min-height: auto; padding: 12px 16px;">
-              <div class="weather-icon-wrapper" style="font-size: 32px; width: 44px; height: 44px;">☀️</div>
+          <div class="weather-demo-container">
+            <!-- Simulated widget that shifts dynamically -->
+            <div class="weather-widget dynamic-widget" id="demoWeatherWidget" style="--weather-accent: var(--weather-st-accent); --weather-gradient-1: var(--weather-st-gradient-1); --weather-gradient-2: var(--weather-st-gradient-2); pointer-events: none; transition: all 0.4s ease;">
+              <div class="weather-icon-wrapper" id="demoWeatherIcon">⛅</div>
               <div class="weather-info">
-                <span class="weather-title" style="font-size: 15px;" data-i18n="widget-title-excellent">Safe to spend</span>
-                <span class="weather-message" style="font-size: 12px;" data-i18n="widget-msg-excellent">Looking good this month</span>
+                <span class="weather-title" id="demoWeatherTitle" data-i18n="widget-title-stable">On track</span>
+                <span class="weather-message" id="demoWeatherMessage" data-i18n="widget-msg-stable">You are moving steadily</span>
+              </div>
+            </div>
+            
+            <!-- Range Slider Control -->
+            <div class="weather-slider-control">
+              <input type="range" id="weatherRangeSlider" min="0" max="120" value="50" class="premium-slider">
+              <div class="weather-slider-value">
+                <span data-i18n="weather-sim-spend">Simulated spending:</span> <strong id="weatherSliderPercent">50%</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Feature 5: Siri & Shortcuts Automations (Hero Full Width Feature) -->
+        <div class="feature-card span-2">
+          <div class="feature-card-content">
+            <div class="feature-icon">⚡</div>
+            <h3 data-i18n="feat-shortcuts-title">Siri & Shortcuts Automations</h3>
+            <p data-i18n="feat-shortcuts-desc">No more manual logging. Nephy integrates natively with Apple App Shortcuts and Intents. Set up simple automations to log expenses automatically when you pay with Apple Pay, receive a bank SMS, or just ask Siri.</p>
+          </div>
+          
+          <div class="shortcut-workflow-container">
+            <div class="shortcut-workflow">
+              <div class="shortcut-block trigger">
+                <div class="shortcut-block-icon">🔔</div>
+                <div class="shortcut-block-content">
+                  <div class="shortcut-block-title" data-i18n="shortcut-title-trigger">When I tap to pay or get a bank notification...</div>
+                </div>
+              </div>
+              
+              <div class="shortcut-arrow">↓</div>
+              
+              <div class="shortcut-block action">
+                <div class="shortcut-block-icon">⛅</div>
+                <div class="shortcut-block-content">
+                  <div class="shortcut-block-title" data-i18n="shortcut-title-action">Log in Nephy automatically</div>
+                  <div class="shortcut-block-sub" data-i18n="shortcut-desc-action">Amount, category, and date are resolved instantly with zero clicks.</div>
+                </div>
               </div>
             </div>
           </div>
@@ -341,15 +278,15 @@
         <div class="timeline-item">
           <div class="timeline-badge">2</div>
           <div class="timeline-content">
-            <h3 data-i18n="step2-title">Set Private Budgets</h3>
-            <p data-i18n="step2-desc">Define your spending limits per category. Only your individual share will calculate towards these limits, leaving you in total control.</p>
+            <h3 data-i18n="step2-title">Set Category Budgets</h3>
+            <p data-i18n="step2-desc">Define your monthly spending limits per category. Keep track of how much you and your partner spend to easily stay on budget together.</p>
           </div>
         </div>
         <div class="timeline-item">
           <div class="timeline-badge">3</div>
           <div class="timeline-content">
-            <h3 data-i18n="step3-title">Mark & Sync Couple Costs</h3>
-            <p data-i18n="step3-desc">As expenses happen, tap 'Couple' for shared bills. Nephy automatically divides the expense and syncs the records securely with your partner via iCloud.</p>
+            <h3 data-i18n="step3-title">Sync Expenses Instantly</h3>
+            <p data-i18n="step3-desc">Every expense you add syncs securely with your partner via iCloud. Mark household costs as shared to automatically split them 50/50 in your budget.</p>
           </div>
         </div>
         <div class="timeline-item">
@@ -367,7 +304,7 @@
   <section id="download" class="download-section">
     <div class="container download-wrapper">
       <h2 data-i18n="dl-title">Start Weathering Your Budget</h2>
-      <p data-i18n="dl-subtitle">Take control of your personal budget, align on couple spending, and experience beautiful, secure finance tracking today.</p>
+      <p data-i18n="dl-subtitle">Take control of your shared finances, track personal and couple spending together, and experience beautiful, secure sync today.</p>
       <div class="download-badge-container">
         <a href="#" class="app-store-badge">
           <img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg" alt="Download on the App Store">

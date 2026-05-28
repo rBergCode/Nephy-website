@@ -453,6 +453,21 @@ body.dark .logo-icon {
   display: none;
 }
 
+.iphone-screen-screenshot {
+  width: 100%;
+  height: 100%;
+  background-color: var(--bg-color);
+  user-select: none;
+  overflow: hidden;
+}
+
+.iphone-screenshot-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
 /* Status Bar */
 .status-bar {
   position: absolute;
@@ -1003,7 +1018,7 @@ body.dark .calc-res-box {
   display: flex;
   align-items: center;
   justify-content: space-around;
-  margin-top: 30px;
+  margin-top: auto;
   position: relative;
   height: 180px;
 }
@@ -1287,5 +1302,167 @@ footer {
   .footer-grid {
     flex-direction: column;
     text-align: center;
+  }
+}
+
+/* Weather Slider Demo */
+.weather-demo-container {
+  margin-top: auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.weather-slider-control {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+
+
+.premium-slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 6px;
+  border-radius: 3px;
+  background: var(--border-color);
+  outline: none;
+  transition: background 0.3s;
+}
+
+.premium-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--slider-accent, var(--primary));
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  border: 2px solid var(--surface-opaque);
+  transition: transform 0.1s ease, background 0.3s;
+}
+
+.premium-slider::-webkit-slider-thumb:hover {
+  transform: scale(1.15);
+}
+
+.premium-slider::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--slider-accent, var(--primary));
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  border: 2px solid var(--surface-opaque);
+  transition: transform 0.1s ease, background 0.3s;
+}
+
+.premium-slider::-moz-range-thumb:hover {
+  transform: scale(1.15);
+}
+
+.weather-slider-value {
+  text-align: center;
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+
+.weather-slider-value strong {
+  color: var(--text);
+  font-family: var(--font-title);
+  font-weight: 700;
+}
+
+/* Shortcuts Automation Feature Card Styling */
+.shortcut-workflow-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.shortcut-workflow {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  max-width: 320px;
+}
+
+.shortcut-block {
+  background: var(--surface-opaque);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  box-shadow: 0 4px 12px var(--shadow-color);
+  transition: transform 0.2s, border-color 0.2s;
+}
+
+.shortcut-block:hover {
+  transform: translateY(-2px);
+  border-color: var(--primary);
+}
+
+.shortcut-block-icon {
+  font-size: 24px;
+  width: 42px;
+  height: 42px;
+  background: var(--primary-bg);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.shortcut-block.action .shortcut-block-icon {
+  background: var(--secondary-bg);
+}
+
+.shortcut-block-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex: 1;
+}
+
+.shortcut-block-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.shortcut-block-sub {
+  font-size: 11px;
+  color: var(--text-secondary);
+}
+
+.shortcut-arrow {
+  font-size: 18px;
+  color: var(--primary);
+  font-weight: bold;
+  animation: bounce-arrow 2s infinite;
+}
+
+@keyframes bounce-arrow {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(4px); }
+}
+
+@media (min-width: 993px) {
+  .feature-card.span-2 {
+    grid-column: span 2;
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 40px;
+    align-items: center;
   }
 }
