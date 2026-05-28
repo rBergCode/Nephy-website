@@ -8,7 +8,7 @@ const translations = {
     
     // Hero
     "hero-title": "Weather your finances with <span>Nephy</span>.",
-    "hero-subtitle": "The elegant personal finance app that syncs shared expenses with your partner. Keep personal spending private, split household costs 50/50, and monitor your budget health visually.",
+    "hero-subtitle": "The elegant personal finance app that syncs all your expenses in real-time with your partner. Track personal and shared spending together, split household costs 50/50, and monitor your budget health visually.",
     "hero-cta-primary": "Explore Features",
     "hero-cta-secondary": "Learn More",
 
@@ -74,14 +74,14 @@ const translations = {
     "features-section-title": "Designed for Your Financial Wellness",
     "features-section-subtitle": "Nephy brings smart, beautiful, and secure budgeting layouts to your phone, keeping you aligned on what matters.",
     
-    "feat-split-title": "Me vs. Couple Splits",
-    "feat-split-desc": "Keep personal expenses private, and mark household costs as shared with a single tap. Couple expenses are automatically split 50/50, so only your half impacts your personal budget.",
+    "feat-split-title": "Personal & Couple Expenses",
+    "feat-split-desc": "Track both individual and shared costs in one shared space. Easily mark household costs as shared to split them 50/50, with both of you having full visibility.",
     
     "feat-cat-title": "Smart Keyword Auto-Categorization",
     "feat-cat-desc": "Type a merchant and watch it classify itself. Nephy matches user-defined keywords (like 'Migros' or 'Spotify') to automatically assign categories and styles, making tracking effortless.",
     
     "feat-sync-title": "iCloud Sync & Sharing",
-    "feat-sync-desc": "Secure, real-time synchronization between your Apple devices and your partner's. Nephy uses Apple's native iCloud sharing, which means no accounts to create and absolute privacy.",
+    "feat-sync-desc": "Secure, real-time synchronization of all expenses between your Apple devices and your partner's using native iCloud sharing. No accounts to create, absolute privacy.",
     
     "feat-weather-title": "Visual Financial Weather",
     "feat-weather-desc": "Dry numbers are hard to digest. Nephy introduces 'Financial Weather' to translate your current budget limits into sunny, cloudy, or rainy status indicators so you know your financial state at a glance.",
@@ -103,22 +103,35 @@ const translations = {
     "step1-title": "Add Categories & Keywords",
     "step1-desc": "Create your custom categories (Groceries, Dining, Transport) and assign keyword triggers to detect merchants automatically.",
     
-    "step2-title": "Set Private Budgets",
-    "step2-desc": "Define your spending limits per category. Only your individual share will calculate towards these limits, leaving you in total control.",
+    "step2-title": "Set Category Budgets",
+    "step2-desc": "Define your monthly spending limits per category. Keep track of how much you and your partner spend to easily stay on budget together.",
     
-    "step3-title": "Mark & Sync Couple Costs",
-    "step3-desc": "As expenses happen, tap 'Couple' for shared bills. Nephy automatically divides the expense and syncs the records securely with your partner via iCloud.",
+    "step3-title": "Sync Expenses Instantly",
+    "step3-desc": "Every expense you add syncs securely with your partner via iCloud. Mark household costs as shared to automatically split them 50/50 in your budget.",
     
     "step4-title": "Watch Your Weather",
     "step4-desc": "Open the dashboard to review your financial health. Sunny weather lets you know you are safe to spend, while showers suggest caution.",
 
     // DL/Footer
     "dl-title": "Start Weathering Your Budget",
-    "dl-subtitle": "Take control of your personal budget, align on couple spending, and experience beautiful, secure finance tracking today.",
+    "dl-subtitle": "Take control of your shared finances, track personal and couple spending together, and experience beautiful, secure sync today.",
     "footer-privacy": "Privacy Policy",
     "footer-support": "Support",
     "footer-rights": "All rights reserved.",
-    "footer-created-by": "Created by the Nephy team."
+    "footer-created-by": "Created by the Nephy team.",
+
+    // Weather Slider Demo
+    "weather-lbl-safe": "Safe",
+    "weather-lbl-track": "On Track",
+    "weather-lbl-warning": "Warning",
+    "weather-sim-spend": "Simulated spending:",
+
+    // Shortcuts Automation Feature
+    "feat-shortcuts-title": "Siri & Shortcuts Automations",
+    "feat-shortcuts-desc": "No more manual logging. Nephy integrates natively with Apple App Shortcuts and Intents. Set up simple automations to log expenses automatically when you pay with Apple Pay, receive a bank SMS, or just ask Siri.",
+    "shortcut-title-trigger": "When I tap to pay or get a bank notification...",
+    "shortcut-title-action": "Log in Nephy automatically",
+    "shortcut-desc-action": "Amount, category, and date are resolved instantly with zero clicks."
   },
   fr: {
     // Navigation
@@ -128,7 +141,7 @@ const translations = {
     
     // Hero
     "hero-title": "Maîtrisez votre budget avec <span>Nephy</span>.",
-    "hero-subtitle": "L'application de finance personnelle élégante qui synchronise vos dépenses partagées en couple. Gardez vos dépenses privées confidentielles, séparez vos coûts communs 50/50 et suivez la météo de votre budget visuellement.",
+    "hero-subtitle": "L'application de finance personnelle élégante qui synchronise toutes vos dépenses avec votre partenaire. Suivez vos frais personnels et de couple ensemble, séparez les coûts communs 50/50, et observez la météo de votre budget visuellement.",
     "hero-cta-primary": "Voir les fonctions",
     "hero-cta-secondary": "En savoir plus",
 
@@ -194,14 +207,14 @@ const translations = {
     "features-section-title": "Conçu pour votre sérénité financière",
     "features-section-subtitle": "Nephy apporte des graphiques de budget intelligents, élégants et sécurisés sur votre téléphone pour vous aider à rester aligné.",
     
-    "feat-split-title": "Partage Dépenses Privées vs. Couple",
-    "feat-split-desc": "Gardez vos dépenses personnelles privées et marquez vos frais de ménage comme partagés en un clic. Les dépenses de couple sont divisées par 2 automatiquement pour ne pas fausser votre budget.",
+    "feat-split-title": "Dépenses Personnelles & Couple",
+    "feat-split-desc": "Suivez vos dépenses individuelles et communes dans un espace partagé. Marquez facilement les frais de ménage pour les diviser automatiquement par deux, avec une visibilité complète pour les deux partenaires.",
     
     "feat-cat-title": "Catégorisation Automatique par Mots-clés",
     "feat-cat-desc": "Saisissez un commerçant et observez-le se classer tout seul. Nephy associe vos mots-clés personnalisés (comme 'Migros' ou 'Spotify') pour attribuer automatiquement la bonne catégorie et la bonne couleur.",
     
     "feat-sync-title": "Partage et Sync iCloud",
-    "feat-sync-desc": "Synchronisation sécurisée en temps réel entre vos appareils Apple et ceux de votre partenaire. Nephy utilise le partage iCloud natif d'Apple: aucun compte à créer, confidentialité absolue.",
+    "feat-sync-desc": "Synchronisation sécurisée en temps réel de toutes les dépenses entre vos appareils Apple et ceux de votre partenaire via le partage iCloud natif. Aucun compte à créer, confidentialité absolue.",
     
     "feat-weather-title": "Météo financière visuelle",
     "feat-weather-desc": "Les chiffres bruts sont parfois difficiles à interpréter. Nephy introduit la 'Météo financière' pour traduire vos limites de budget en indicateurs clairs (soleil, nuage, pluie) en un clin d'œil.",
@@ -223,30 +236,42 @@ const translations = {
     "step1-title": "Ajoutez des Catégories & Mots-clés",
     "step1-desc": "Créez vos catégories sur-mesure (Alimentation, Sorties, Transports) et configurez les mots-clés pour classer vos achats.",
     
-    "step2-title": "Définissez vos Budgets Privés",
-    "step2-desc": "Indiquez vos plafonds de dépenses mensuels. Seule votre part individuelle des coûts partagés compte pour vos budgets.",
+    "step2-title": "Définissez vos Budgets",
+    "step2-desc": "Définissez vos plafonds de dépenses mensuels par catégorie. Suivez l'évolution des dépenses à deux pour garder le contrôle de votre budget commun.",
     
-    "step3-title": "Synchronisez les coûts partagés",
-    "step3-desc": "Lors de la saisie, cochez 'Couple'. Nephy divise le montant par deux et l'envoie de manière sécurisée sur le mobile de votre partenaire via iCloud.",
+    "step3-title": "Synchronisez instantanément",
+    "step3-desc": "Chaque dépense ajoutée se synchronise en toute sécurité avec votre partenaire via iCloud. Cochez 'Couple' pour diviser automatiquement les frais communs à 50/50.",
     
     "step4-title": "Consultez votre Météo",
     "step4-desc": "Ouvrez le tableau de bord pour faire le point. Un grand soleil indique que vous pouvez dépenser sans crainte, la pluie conseille la prudence.",
 
     // DL/Footer
     "dl-title": "Démarrez votre Météo Budgétaire",
-    "dl-subtitle": "Gérez vos limites privées, coordonnez vos dépenses de couple et découvrez un suivi budgétaire fluide et confidentiel dès aujourd'hui.",
+    "dl-subtitle": "Gérez vos budgets à deux, coordonnez vos dépenses de couple et personnelles, et découvrez un suivi budgétaire fluide et partagé dès aujourd'hui.",
     "footer-privacy": "Charte de Confidentialité",
     "footer-support": "Support Technique",
     "footer-rights": "Tous droits réservés.",
-    "footer-created-by": "Créé par l'équipe Nephy."
+    "footer-created-by": "Créé par l'équipe Nephy.",
+
+    // Weather Slider Demo
+    "weather-lbl-safe": "Sûr",
+    "weather-lbl-track": "Stable",
+    "weather-lbl-warning": "Alerte",
+    "weather-sim-spend": "Dépenses simulées :",
+
+    // Shortcuts Automation Feature
+    "feat-shortcuts-title": "Siri & Automations Shortcuts",
+    "feat-shortcuts-desc": "Fini la saisie manuelle. Nephy s'intègre nativement avec les App Shortcuts et Intents d'Apple. Configurez des automatisations pour saisir vos dépenses automatiquement dès que vous payez avec Apple Pay, recevez un SMS bancaire, ou demandez à Siri.",
+    "shortcut-title-trigger": "Quand je paie ou reçois une notification bancaire...",
+    "shortcut-title-action": "Enregistrer dans Nephy automatiquement",
+    "shortcut-desc-action": "Le montant, la catégorie et la date sont saisis instantanément sans aucun clic."
   }
 };
 
 // Global State
 let currentLang = localStorage.getItem("lang") || "en";
 let currentTheme = localStorage.getItem("theme") || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
-let activeWeatherState = "stable";
-let amountVisible = false;
+let weatherPrevState = "";
 
 // Keyword mappings for Sandbox demo
 const keywordsDb = {
@@ -263,32 +288,7 @@ const langToggle = document.getElementById("langToggle");
 const iconMoon = themeToggle.querySelector(".icon-moon");
 const iconSun = themeToggle.querySelector(".icon-sun");
 
-// Mockup screen elements
-const currentMonthEl = document.getElementById("currentMonth");
-const weatherWidget = document.getElementById("weatherWidget");
-const weatherIcon = document.getElementById("weatherIcon");
-const weatherTitle = document.getElementById("weatherTitle");
-const weatherMessage = document.getElementById("weatherMessage");
-const weatherDetail = document.getElementById("weatherDetail");
 
-// Mockup Budgets
-const groceriesSpent = document.getElementById("groceriesSpent");
-const groceriesProgress = document.getElementById("groceriesProgress");
-const groceriesRemaining = document.getElementById("groceriesRemaining");
-
-const restaurantsSpent = document.getElementById("restaurantsSpent");
-const restaurantsProgress = document.getElementById("restaurantsProgress");
-const restaurantsRemaining = document.getElementById("restaurantsRemaining");
-
-const subscriptionsSpent = document.getElementById("subscriptionsSpent");
-const subscriptionsProgress = document.getElementById("subscriptionsProgress");
-const subscriptionsRemaining = document.getElementById("subscriptionsRemaining");
-
-// Category Grid Mockups
-const catAmtGroceries = document.getElementById("catAmtGroceries");
-const catAmtDining = document.getElementById("catAmtDining");
-const catAmtTransport = document.getElementById("catAmtTransport");
-const catAmtSubs = document.getElementById("catAmtSubs");
 
 // Split Calculator Elements
 const calcAmount = document.getElementById("calcAmount");
@@ -315,20 +315,19 @@ function init() {
     iconSun.style.display = "none";
   }
 
-  // Set current month in mockup to localized name
-  updateMockupMonth();
-
   // Apply initial language translation
   applyLanguage(currentLang);
-
-  // Initialize interactive mockup values based on 'stable' state
-  updateWeatherState("stable");
 
   // Initialize calculator
   runCalculator();
 
   // Initialize Keyword sandbox
   runSandbox();
+
+  // Initialize Weather slider
+  if (weatherRangeSlider) {
+    runWeatherSlider();
+  }
 }
 
 // --- LANGUAGE SWITCHER ---
@@ -358,18 +357,11 @@ function applyLanguage(lang) {
     }
   });
 
-  // Special translation updates
-  updateMockupMonth();
-  updateWeatherState(activeWeatherState);
-  
   // Re-run sandbox to update matched label translation
   runSandbox();
-}
 
-function updateMockupMonth() {
-  const date = new Date();
-  const options = { month: 'long', year: 'numeric' };
-  currentMonthEl.textContent = date.toLocaleDateString(currentLang === 'en' ? 'en-US' : 'fr-FR', options);
+  // Sync screenshot with selected language
+  updateDashboardScreenshot();
 }
 
 // --- THEME SWITCHER ---
@@ -385,157 +377,20 @@ themeToggle.addEventListener("click", () => {
     iconMoon.style.display = "block";
     iconSun.style.display = "none";
   }
+
+  // Sync screenshot with selected theme
+  updateDashboardScreenshot();
 });
 
-// --- INTERACTIVE IPHONE MOCKUP ENGINE ---
-const weatherConfigs = {
-  excellent: {
-    icon: "☀️",
-    titleKey: "widget-title-excellent",
-    messageKey: "widget-msg-excellent",
-    spentKey: "spent-excellent",
-    accentColor: "var(--weather-ex-accent)",
-    gradient1: "var(--weather-ex-gradient-1)",
-    gradient2: "var(--weather-ex-gradient-2)",
-    
-    // Budgets
-    groceries: { spent: 45.0, total: 400.0, percent: 11, remKey: "remaining-ex-groceries" },
-    dining: { spent: 35.0, total: 150.0, percent: 23, remKey: "remaining-ex-dining" },
-    subs: { spent: 19.90, total: 50.0, percent: 39, remKey: "remaining-ex-subscriptions" },
-    
-    // Summary
-    catGroceries: 45.00,
-    catDining: 35.00,
-    catTransport: 20.10,
-    catSubs: 19.90
-  },
-  stable: {
-    icon: "⛅",
-    titleKey: "widget-title-stable",
-    messageKey: "widget-msg-stable",
-    spentKey: "spent-stable",
-    accentColor: "var(--weather-st-accent)",
-    gradient1: "var(--weather-st-gradient-1)",
-    gradient2: "var(--weather-st-gradient-2)",
-    
-    // Budgets
-    groceries: { spent: 180.0, total: 400.0, percent: 45, remKey: "remaining-st-groceries" },
-    dining: { spent: 95.0, total: 150.0, percent: 63, remKey: "remaining-st-dining" },
-    subs: { spent: 35.50, total: 50.0, percent: 71, remKey: "remaining-st-subscriptions" },
-    
-    // Summary
-    catGroceries: 180.00,
-    catDining: 95.00,
-    catTransport: 30.10,
-    catSubs: 35.50
-  },
-  warning: {
-    icon: "🌧️",
-    titleKey: "widget-title-warning",
-    messageKey: "widget-msg-warning",
-    spentKey: "spent-warning",
-    accentColor: "var(--weather-wa-accent)",
-    gradient1: "var(--weather-wa-gradient-1)",
-    gradient2: "var(--weather-wa-gradient-2)",
-    
-    // Budgets
-    groceries: { spent: 390.0, total: 400.0, percent: 97, remKey: "remaining-wa-groceries" },
-    dining: { spent: 165.0, total: 150.0, percent: 110, remKey: "remaining-wa-dining" },
-    subs: { spent: 48.0, total: 50.0, percent: 96, remKey: "remaining-wa-subscriptions" },
-    
-    // Summary
-    catGroceries: 390.00,
-    catDining: 165.00,
-    catTransport: 45.30,
-    catSubs: 48.00
+// Update the active dashboard screenshot file based on language and theme
+function updateDashboardScreenshot() {
+  const dashboardScreenshot = document.getElementById("dashboardScreenshot");
+  if (dashboardScreenshot) {
+    dashboardScreenshot.src = `Dashboard_${currentLang}_${currentTheme}.PNG`;
   }
-};
-
-// Handle Mockup controller tabs click
-document.querySelectorAll(".control-tab").forEach(tab => {
-  tab.addEventListener("click", (e) => {
-    // Set active tab styling
-    document.querySelectorAll(".control-tab").forEach(t => t.classList.remove("active"));
-    tab.classList.add("active");
-    
-    const state = tab.getAttribute("data-state");
-    updateWeatherState(state);
-  });
-});
-
-function updateWeatherState(state) {
-  activeWeatherState = state;
-  const config = weatherConfigs[state];
-  
-  // Update weather widget styles & gradient variables
-  weatherWidget.style.setProperty("--weather-accent", config.accentColor);
-  weatherWidget.style.setProperty("--weather-gradient-1", config.gradient1);
-  weatherWidget.style.setProperty("--weather-gradient-2", config.gradient2);
-  
-  weatherIcon.textContent = config.icon;
-  weatherTitle.textContent = translations[currentLang][config.titleKey];
-  weatherMessage.textContent = translations[currentLang][config.messageKey];
-  
-  // Show / Hide Detail Amount toggle
-  updateWeatherDetailLabel(config);
-
-  // Update Budgets Card Data
-  groceriesSpent.textContent = `CHF ${config.groceries.spent.toFixed(2)} / CHF ${config.groceries.total.toFixed(2)}`;
-  groceriesProgress.style.width = `${config.groceries.percent}%`;
-  groceriesRemaining.textContent = translations[currentLang][config.groceries.remKey];
-  
-  // Adjust progress bar classes for warning
-  if (state === "warning") {
-    groceriesProgress.className = "budget-progress-bar orange";
-  } else {
-    groceriesProgress.className = "budget-progress-bar";
-  }
-
-  restaurantsSpent.textContent = `CHF ${config.dining.spent.toFixed(2)} / CHF ${config.dining.total.toFixed(2)}`;
-  restaurantsProgress.style.width = `${config.dining.percent}%`;
-  restaurantsRemaining.textContent = translations[currentLang][config.dining.remKey];
-  
-  if (state === "warning") {
-    restaurantsProgress.className = "budget-progress-bar red";
-    restaurantsRemaining.style.color = "#ef4444";
-  } else if (state === "stable") {
-    restaurantsProgress.className = "budget-progress-bar orange";
-    restaurantsRemaining.style.color = "";
-  } else {
-    restaurantsProgress.className = "budget-progress-bar";
-    restaurantsRemaining.style.color = "";
-  }
-
-  subscriptionsSpent.textContent = `CHF ${config.subs.spent.toFixed(2)} / CHF ${config.subs.total.toFixed(2)}`;
-  subscriptionsProgress.style.width = `${config.subs.percent}%`;
-  subscriptionsRemaining.textContent = translations[currentLang][config.subs.remKey];
-  if (state === "warning") {
-    subscriptionsProgress.className = "budget-progress-bar orange";
-  } else {
-    subscriptionsProgress.className = "budget-progress-bar";
-  }
-
-  // Update Category Spending grid amounts
-  catAmtGroceries.textContent = `CHF ${config.catGroceries.toFixed(2)}`;
-  catAmtDining.textContent = `CHF ${config.catDining.toFixed(2)}`;
-  catAmtTransport.textContent = `CHF ${config.catTransport.toFixed(2)}`;
-  catAmtSubs.textContent = `CHF ${config.catSubs.toFixed(2)}`;
 }
 
-// Toggle Widget Visibility
-weatherWidget.addEventListener("click", () => {
-  amountVisible = !amountVisible;
-  const config = weatherConfigs[activeWeatherState];
-  updateWeatherDetailLabel(config);
-});
 
-function updateWeatherDetailLabel(config) {
-  if (amountVisible) {
-    weatherDetail.textContent = translations[currentLang][config.spentKey];
-  } else {
-    weatherDetail.textContent = translations[currentLang]["tap-to-see"];
-  }
-}
 
 // --- INTERACTIVE SPLIT CALCULATOR ---
 calcAmount.addEventListener("input", runCalculator);
@@ -585,33 +440,27 @@ function runSandbox() {
   
   if (matchedCatKey) {
     let styleClass = "";
-    let emoji = "🏷️";
     let catTranslateKey = "";
     
     switch (matchedCatKey) {
       case "groceries":
         styleClass = "cat-groceries";
-        emoji = "🛒";
         catTranslateKey = "cat-groceries";
         break;
       case "dining":
         styleClass = "cat-dining";
-        emoji = "☕";
         catTranslateKey = "cat-dining";
         break;
       case "transport":
         styleClass = "cat-transport";
-        emoji = "🚇";
         catTranslateKey = "cat-transport";
         break;
       case "subscriptions":
         styleClass = "cat-subscriptions";
-        emoji = "📱";
         catTranslateKey = "cat-subscriptions";
         break;
       case "household":
         styleClass = "cat-household";
-        emoji = "🏠";
         catTranslateKey = "cat-household";
         break;
     }
@@ -619,10 +468,93 @@ function runSandbox() {
     sandboxResult.classList.add(styleClass);
     // Custom label construction
     const categoryName = translations[currentLang][catTranslateKey] || matchedCatKey.charAt(0).toUpperCase() + matchedCatKey.slice(1);
-    sandboxResult.innerHTML = `${emoji} <span>${categoryName}</span>`;
+    sandboxResult.innerHTML = `<span>${categoryName}</span>`;
   } else {
     sandboxResult.classList.add("cat-uncategorized");
-    sandboxResult.innerHTML = `❓ <span>${translations[currentLang]["cat-uncategorized"]}</span>`;
+    sandboxResult.innerHTML = `<span>${translations[currentLang]["cat-uncategorized"]}</span>`;
+  }
+}
+
+// --- INTERACTIVE WEATHER SLIDER DEMO ---
+const weatherRangeSlider = document.getElementById("weatherRangeSlider");
+const weatherSliderPercent = document.getElementById("weatherSliderPercent");
+const demoWeatherWidget = document.getElementById("demoWeatherWidget");
+const demoWeatherIcon = document.getElementById("demoWeatherIcon");
+const demoWeatherTitle = document.getElementById("demoWeatherTitle");
+const demoWeatherMessage = document.getElementById("demoWeatherMessage");
+
+if (weatherRangeSlider) {
+  weatherRangeSlider.addEventListener("input", runWeatherSlider);
+}
+
+function runWeatherSlider() {
+  const value = parseInt(weatherRangeSlider.value);
+  weatherSliderPercent.textContent = `${value}%`;
+  
+  let state = "excellent"; // Default to excellent (Safe to spend, progress < 0.8)
+  
+  const progress = value / 100;
+  
+  if (progress >= 1.0) {
+    state = "warning"; // Warning / High spending (progress >= 1.0)
+  } else if (progress >= 0.8) {
+    state = "stable"; // Stable / On track (0.8 <= progress < 1.0)
+  }
+  
+  // Weather styles mapping
+  const styles = {
+    excellent: {
+      icon: "☀️",
+      titleKey: "widget-title-excellent",
+      messageKey: "widget-msg-excellent",
+      accent: "var(--weather-ex-accent)",
+      grad1: "var(--weather-ex-gradient-1)",
+      grad2: "var(--weather-ex-gradient-2)",
+      animClass: "weather-icon-spin"
+    },
+    stable: {
+      icon: "⛅",
+      titleKey: "widget-title-stable",
+      messageKey: "widget-msg-stable",
+      accent: "var(--weather-st-accent)",
+      grad1: "var(--weather-st-gradient-1)",
+      grad2: "var(--weather-st-gradient-2)",
+      animClass: "weather-icon-float"
+    },
+    warning: {
+      icon: "🌧️",
+      titleKey: "widget-title-warning",
+      messageKey: "widget-msg-warning",
+      accent: "var(--weather-wa-accent)",
+      grad1: "var(--weather-wa-gradient-1)",
+      grad2: "var(--weather-wa-gradient-2)",
+      animClass: "weather-icon-shake"
+    }
+  };
+  
+  const config = styles[state];
+  
+  // Set inline gradient properties
+  demoWeatherWidget.style.setProperty("--weather-accent", config.accent);
+  demoWeatherWidget.style.setProperty("--weather-gradient-1", config.grad1);
+  demoWeatherWidget.style.setProperty("--weather-gradient-2", config.grad2);
+  
+  // Update icon text, remove previous animation classes, and add new animation class
+  demoWeatherIcon.textContent = config.icon;
+  demoWeatherIcon.className = "weather-icon-wrapper " + config.animClass;
+  
+  demoWeatherTitle.textContent = translations[currentLang][config.titleKey];
+  demoWeatherMessage.textContent = translations[currentLang][config.messageKey];
+  
+  // Dynamically color range slider thumb to match weather accent
+  weatherRangeSlider.style.setProperty("--slider-accent", config.accent);
+
+  // Play bounce animation if the state transitions
+  if (state !== weatherPrevState) {
+    demoWeatherWidget.classList.remove("widget-bounce-active");
+    void demoWeatherWidget.offsetWidth; // Reflow to reset CSS keyframe animation
+    demoWeatherWidget.classList.add("widget-bounce-active");
+    weatherPrevState = state;
   }
 }
 
