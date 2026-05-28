@@ -661,33 +661,16 @@ function renderWeatherEffect(state) {
     rays.className = "sun-rays";
     weatherOverlay.appendChild(rays);
     
-    const sunCount = 5;
-    for (let i = 0; i < sunCount; i++) {
-      const sun = document.createElement("div");
-      sun.className = "floating-sun";
-      sun.style.left = (Math.random() * 85 + 5) + "vw";
-      sun.style.width = sun.style.height = (Math.random() * 50 + 80) + "px";
-      sun.style.animationDuration = (Math.random() * 12 + 15) + "s";
-      sun.style.animationDelay = (Math.random() * -15) + "s";
-      sun.style.opacity = (Math.random() * 0.4 + 0.3);
-      
-      // Inject standard shiny vector sun SVG
-      sun.innerHTML = `
-        <svg viewBox="0 0 100 100" fill="currentColor" style="width: 100%; height: 100%;">
-          <circle cx="50" cy="50" r="20" />
-          <g stroke="currentColor" stroke-width="6" stroke-linecap="round">
-            <line x1="50" y1="10" x2="50" y2="22" />
-            <line x1="50" y1="90" x2="50" y2="78" />
-            <line x1="10" y1="50" x2="22" y2="50" />
-            <line x1="90" y1="50" x2="78" y2="50" />
-            <line x1="22" y1="22" x2="31" y2="31" />
-            <line x1="78" y1="78" x2="69" y2="69" />
-            <line x1="22" y1="78" x2="31" y2="69" />
-            <line x1="78" y1="22" x2="69" y2="31" />
-          </g>
-        </svg>
-      `;
-      weatherOverlay.appendChild(sun);
+    const particleCount = 12;
+    for (let i = 0; i < particleCount; i++) {
+      const p = document.createElement("div");
+      p.className = "sun-particle";
+      p.style.left = (Math.random() * 90 + 5) + "vw";
+      p.style.animationDuration = (Math.random() * 6 + 8) + "s";
+      p.style.animationDelay = (Math.random() * -12) + "s";
+      const size = (Math.random() * 30 + 30) + "px";
+      p.style.width = p.style.height = size;
+      weatherOverlay.appendChild(p);
     }
   } else if (state === "stable") {
     // Cloudy Effect: Drift clouds slowly across screen
