@@ -272,6 +272,10 @@ const translations = {
 let currentLang = localStorage.getItem("lang") || "en";
 let currentTheme = localStorage.getItem("theme") || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
 let weatherPrevState = "";
+let isHoveringWeatherFeature = false;
+let isSliderInteracting = false;
+let weatherOverlayTimeout = null;
+let currentOverlayState = "";
 
 // Keyword mappings for Sandbox demo
 const keywordsDb = {
@@ -328,6 +332,9 @@ function init() {
   if (weatherRangeSlider) {
     runWeatherSlider();
   }
+
+  // Initialize weather overlay effect
+  initWeatherOverlay();
 }
 
 // --- LANGUAGE SWITCHER ---
@@ -555,6 +562,144 @@ function runWeatherSlider() {
     void demoWeatherWidget.offsetWidth; // Reflow to reset CSS keyframe animation
     demoWeatherWidget.classList.add("widget-bounce-active");
     weatherPrevState = state;
+  }
+
+  // Update weather overlay if active
+  renderWeatherEffect(state);
+}
+
+// --- WEATHER PAGE OVERLAY EFFECT CONTROL ---
+function initWeatherOverlay() {
+  const weatherOverlay = document.getElementById("weather-overlay");
+  const weatherFeatureCard = document.getElementById("weatherFeatureCard");
+  const weatherRangeSlider = document.getElementById("weatherRangeSlider");
+
+  if (!weatherOverlay || !weatherFeatureCard || !weatherRangeSlider) return;
+
+  // Hover detection for the feature card
+  weatherFeatureCard.addEventListener("mouseenter", () => {
+    isHoveringWeatherFeature = true;
+    showWeatherOverlay();
+  });
+  
+  weatherFeatureCard.addEventListener("mouseleave", () => {
+    isHoveringWeatherFeature = false;
+    hideWeatherOverlay();
+  });
+
+  // Drag interaction for range slider
+  weatherRangeSlider.addEventListener("mousedown", () => {
+    isSliderInteracting = true;
+    showWeatherOverlay();
+  });
+  weatherRangeSlider.addEventListener("touchstart", () => {
+    isSliderInteracting = true;
+    showWeatherOverlay();
+  }, { passive: true });
+
+  window.addEventListener("mouseup", () => {
+    if (isSliderInteracting) {
+      isSliderInteracting = false;
+      if (!isHoveringWeatherFeature) {
+        hideWeatherOverlay();
+      }
+    }
+  });
+  window.addEventListener("touchend", () => {
+    if (isSliderInteracting) {
+      isSliderInteracting = false;
+      if (!isHoveringWeatherFeature) {
+        hideWeatherOverlay();
+      }
+    }
+  });
+
+  function showWeatherOverlay() {
+    if (weatherOverlayTimeout) {
+      clearTimeout(weatherOverlayTimeout);
+      weatherOverlayTimeout = null;
+    }
+    weatherOverlay.classList.add("active");
+    
+    // Find current weather state and render it
+    const value = parseInt(weatherRangeSlider.value);
+    const progress = value / 100;
+    let state = "excellent";
+    if (progress >= 1.0) {
+      state = "warning";
+    } else if (progress >= 0.8) {
+      state = "stable";
+    }
+    renderWeatherEffect(state);
+  }
+
+  function hideWeatherOverlay() {
+    if (isHoveringWeatherFeature || isSliderInteracting) return;
+    weatherOverlay.classList.remove("active");
+    currentOverlayState = ""; // Reset state so next show will re-render
+    weatherOverlayTimeout = setTimeout(() => {
+      weatherOverlay.innerHTML = "";
+      weatherOverlay.className = "weather-overlay";
+    }, 600);
+  }
+}
+
+function renderWeatherEffect(state) {
+  const weatherOverlay = document.getElementById("weather-overlay");
+  if (!weatherOverlay || !weatherOverlay.classList.contains("active")) return;
+  
+  if (currentOverlayState === state) return;
+  currentOverlayState = state;
+  
+  weatherOverlay.innerHTML = "";
+  weatherOverlay.classList.remove("state-excellent", "state-stable", "state-warning");
+  weatherOverlay.classList.add("state-" + state);
+  
+  if (state === "excellent") {
+    // Sunny Effect: Radial warm glow & floating sparkles
+    const rays = document.createElement("div");
+    rays.className = "sun-rays";
+    weatherOverlay.appendChild(rays);
+    
+    const particleCount = 15;
+    for (let i = 0; i < particleCount; i++) {
+      const p = document.createElement("div");
+      p.className = "sun-particle";
+      p.style.left = Math.random() * 100 + "vw";
+      p.style.animationDuration = (Math.random() * 4 + 6) + "s";
+      p.style.animationDelay = (Math.random() * -10) + "s";
+      p.style.width = p.style.height = (Math.random() * 4 + 4) + "px";
+      weatherOverlay.appendChild(p);
+    }
+  } else if (state === "stable") {
+    // Cloudy Effect: Drift clouds slowly across screen
+    const cloudCount = 5;
+    for (let i = 0; i < cloudCount; i++) {
+      const cloud = document.createElement("div");
+      cloud.className = "floating-cloud";
+      cloud.style.top = (Math.random() * 60 + 10) + "vh";
+      cloud.style.left = "-200px";
+      cloud.style.width = (Math.random() * 100 + 140) + "px";
+      cloud.style.height = (Math.random() * 30 + 40) + "px";
+      cloud.style.animationDuration = (Math.random() * 20 + 25) + "s";
+      cloud.style.animationDelay = (Math.random() * -30) + "s";
+      cloud.style.opacity = (Math.random() * 0.4 + 0.3);
+      weatherOverlay.appendChild(cloud);
+    }
+  } else if (state === "warning") {
+    // Rainy Effect: Fast vertical streaks falling
+    const dropCount = 60;
+    for (let i = 0; i < dropCount; i++) {
+      const drop = document.createElement("div");
+      drop.className = "rain-drop";
+      drop.style.left = Math.random() * 100 + "vw";
+      drop.style.top = "-120px";
+      drop.style.animationDuration = (Math.random() * 0.5 + 0.7) + "s";
+      drop.style.animationDelay = (Math.random() * -2) + "s";
+      drop.style.height = (Math.random() * 40 + 60) + "px";
+      drop.style.opacity = (Math.random() * 0.35 + 0.2);
+      weatherOverlay.appendChild(drop);
+    }
   }
 }
 

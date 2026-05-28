@@ -1466,3 +1466,122 @@ footer {
     align-items: center;
   }
 }
+
+/* Weather Page Overlay Effects */
+.weather-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0;
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.8s ease;
+  overflow: hidden;
+}
+
+.weather-overlay.active {
+  opacity: 1;
+}
+
+/* Background state color overlays */
+.weather-overlay.state-excellent {
+  background-color: rgba(255, 235, 170, 0.08);
+}
+.weather-overlay.state-stable {
+  background-color: rgba(66, 196, 173, 0.04);
+}
+.weather-overlay.state-warning {
+  background-color: rgba(29, 35, 72, 0.16);
+}
+
+/* Rain Effect */
+.rain-drop {
+  position: absolute;
+  background: linear-gradient(transparent, rgba(150, 157, 232, 0.5));
+  width: 1px;
+  height: 80px;
+  opacity: 0.6;
+  animation: weather-fall linear infinite;
+}
+
+@keyframes weather-fall {
+  0% {
+    transform: translateY(-120px) rotate(15deg);
+  }
+  100% {
+    transform: translateY(110vh) rotate(15deg);
+  }
+}
+
+/* Sun Particles (Sparkles) */
+.sun-particle {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgba(255, 215, 0, 0.6);
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.8);
+  animation: weather-float-up ease-in-out infinite;
+}
+
+@keyframes weather-float-up {
+  0% {
+    transform: translateY(110vh) scale(0.5);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.6;
+  }
+  90% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateY(-10vh) scale(1.2);
+    opacity: 0;
+  }
+}
+
+/* Rotating Sun Rays (subtle ambient glow) */
+.sun-rays {
+  position: absolute;
+  top: -200px;
+  right: -200px;
+  width: 800px;
+  height: 800px;
+  background: radial-gradient(circle, rgba(255, 230, 150, 0.15) 0%, transparent 70%);
+  border-radius: 50%;
+  animation: weather-pulse-glow 4s ease-in-out infinite alternate;
+}
+
+@keyframes weather-pulse-glow {
+  0% {
+    transform: scale(0.9);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+}
+
+/* Floating Clouds */
+.floating-cloud {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 50px;
+  width: 160px;
+  height: 60px;
+  filter: blur(12px);
+  animation: weather-drift linear infinite;
+}
+
+@keyframes weather-drift {
+  0% {
+    transform: translateX(-300px);
+  }
+  100% {
+    transform: translateX(105vw);
+  }
+}
