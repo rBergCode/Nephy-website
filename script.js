@@ -673,32 +673,52 @@ function renderWeatherEffect(state) {
     }
   } else if (state === "stable") {
     // Cloudy Effect: Drift clouds slowly across screen
-    const cloudCount = 5;
+    const cloudCount = 6;
     for (let i = 0; i < cloudCount; i++) {
       const cloud = document.createElement("div");
       cloud.className = "floating-cloud";
       cloud.style.top = (Math.random() * 60 + 10) + "vh";
       cloud.style.left = "-200px";
-      cloud.style.width = (Math.random() * 100 + 140) + "px";
-      cloud.style.height = (Math.random() * 30 + 40) + "px";
-      cloud.style.animationDuration = (Math.random() * 20 + 25) + "s";
-      cloud.style.animationDelay = (Math.random() * -30) + "s";
-      cloud.style.opacity = (Math.random() * 0.4 + 0.3);
+      cloud.style.width = (Math.random() * 120 + 160) + "px";
+      cloud.style.height = (Math.random() * 40 + 60) + "px";
+      cloud.style.animationDuration = (Math.random() * 25 + 30) + "s";
+      cloud.style.animationDelay = (Math.random() * -40) + "s";
+      cloud.style.opacity = (Math.random() * 0.45 + 0.35);
+      
+      // Inject standard fluffy cloud SVG
+      cloud.innerHTML = `
+        <svg viewBox="0 0 100 60" fill="currentColor" style="width: 100%; height: 100%;">
+          <path d="M20 40 L80 40 A12 12 0 0 0 80 16 A18 18 0 0 0 35 12 A15 15 0 0 0 20 40 Z" />
+        </svg>
+      `;
+      
       weatherOverlay.appendChild(cloud);
     }
   } else if (state === "warning") {
     // Rainy Effect: Fast vertical streaks falling
-    const dropCount = 60;
+    const dropCount = 80;
     for (let i = 0; i < dropCount; i++) {
       const drop = document.createElement("div");
       drop.className = "rain-drop";
       drop.style.left = Math.random() * 100 + "vw";
-      drop.style.top = "-120px";
-      drop.style.animationDuration = (Math.random() * 0.5 + 0.7) + "s";
+      drop.style.top = "-130px";
+      drop.style.animationDuration = (Math.random() * 0.4 + 0.6) + "s";
       drop.style.animationDelay = (Math.random() * -2) + "s";
-      drop.style.height = (Math.random() * 40 + 60) + "px";
-      drop.style.opacity = (Math.random() * 0.35 + 0.2);
+      drop.style.height = (Math.random() * 50 + 70) + "px";
       weatherOverlay.appendChild(drop);
+    }
+    
+    // Add splash ripples at the bottom of the screen
+    const splashCount = 20;
+    for (let i = 0; i < splashCount; i++) {
+      const splash = document.createElement("div");
+      splash.className = "rain-splash";
+      splash.style.left = Math.random() * 100 + "vw";
+      splash.style.bottom = (Math.random() * 8) + "px";
+      splash.style.width = splash.style.height = (Math.random() * 12 + 8) + "px";
+      splash.style.animationDuration = (Math.random() * 0.3 + 0.5) + "s";
+      splash.style.animationDelay = (Math.random() * -1) + "s";
+      weatherOverlay.appendChild(splash);
     }
   }
 }

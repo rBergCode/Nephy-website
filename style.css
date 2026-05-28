@@ -1490,28 +1490,53 @@ footer {
   background-color: rgba(255, 235, 170, 0.08);
 }
 .weather-overlay.state-stable {
-  background-color: rgba(66, 196, 173, 0.04);
+  background-color: rgba(66, 196, 173, 0.12);
 }
 .weather-overlay.state-warning {
-  background-color: rgba(29, 35, 72, 0.16);
+  background-color: rgba(15, 20, 40, 0.35);
+}
+body.dark .weather-overlay.state-warning {
+  background-color: rgba(8, 10, 22, 0.65);
 }
 
 /* Rain Effect */
 .rain-drop {
   position: absolute;
-  background: linear-gradient(transparent, rgba(150, 157, 232, 0.5));
-  width: 1px;
-  height: 80px;
-  opacity: 0.6;
+  background: linear-gradient(transparent, rgba(140, 160, 255, 0.75));
+  width: 2px;
+  height: 120px;
+  opacity: 0.85;
   animation: weather-fall linear infinite;
 }
 
 @keyframes weather-fall {
   0% {
-    transform: translateY(-120px) rotate(15deg);
+    transform: translateY(-130px) rotate(12deg);
   }
   100% {
-    transform: translateY(110vh) rotate(15deg);
+    transform: translateY(110vh) rotate(12deg);
+  }
+}
+
+/* Rain Splash effect at the bottom */
+.rain-splash {
+  position: absolute;
+  bottom: 0;
+  border-radius: 50%;
+  border: 1.5px solid rgba(160, 180, 255, 0.5);
+  transform: scale(0);
+  opacity: 0;
+  animation: weather-splash 0.6s ease-out infinite;
+}
+
+@keyframes weather-splash {
+  0% {
+    transform: scale(0) translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1) translateY(-12px);
+    opacity: 0;
   }
 }
 
@@ -1569,12 +1594,13 @@ footer {
 /* Floating Clouds */
 .floating-cloud {
   position: absolute;
-  background: rgba(255, 255, 255, 0.08);
-  border-radius: 50px;
-  width: 160px;
-  height: 60px;
-  filter: blur(12px);
+  color: rgba(66, 196, 173, 0.28);
+  filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.08));
   animation: weather-drift linear infinite;
+}
+
+body.dark .floating-cloud {
+  color: rgba(255, 255, 255, 0.14);
 }
 
 @keyframes weather-drift {
