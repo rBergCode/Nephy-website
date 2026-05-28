@@ -1540,32 +1540,17 @@ body.dark .weather-overlay.state-warning {
   }
 }
 
-/* Sun Particles (Sparkles) */
-.sun-particle {
+/* Floating Suns */
+.floating-sun {
   position: absolute;
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: rgba(255, 215, 0, 0.6);
-  box-shadow: 0 0 10px rgba(255, 215, 0, 0.8);
-  animation: weather-float-up ease-in-out infinite;
+  color: rgba(255, 200, 50, 0.28);
+  filter: drop-shadow(0 0 16px rgba(255, 200, 50, 0.3));
+  animation: weather-drift linear infinite;
 }
 
-@keyframes weather-float-up {
-  0% {
-    transform: translateY(110vh) scale(0.5);
-    opacity: 0;
-  }
-  10% {
-    opacity: 0.6;
-  }
-  90% {
-    opacity: 0.6;
-  }
-  100% {
-    transform: translateY(-10vh) scale(1.2);
-    opacity: 0;
-  }
+body.dark .floating-sun {
+  color: rgba(255, 180, 0, 0.16);
+  filter: drop-shadow(0 0 20px rgba(255, 180, 0, 0.25));
 }
 
 /* Rotating Sun Rays (subtle ambient glow) */

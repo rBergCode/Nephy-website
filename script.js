@@ -656,20 +656,39 @@ function renderWeatherEffect(state) {
   weatherOverlay.classList.add("state-" + state);
   
   if (state === "excellent") {
-    // Sunny Effect: Radial warm glow & floating sparkles
+    // Sunny Effect: Radial warm glow & large floating sun vectors
     const rays = document.createElement("div");
     rays.className = "sun-rays";
     weatherOverlay.appendChild(rays);
     
-    const particleCount = 15;
-    for (let i = 0; i < particleCount; i++) {
-      const p = document.createElement("div");
-      p.className = "sun-particle";
-      p.style.left = Math.random() * 100 + "vw";
-      p.style.animationDuration = (Math.random() * 4 + 6) + "s";
-      p.style.animationDelay = (Math.random() * -10) + "s";
-      p.style.width = p.style.height = (Math.random() * 4 + 4) + "px";
-      weatherOverlay.appendChild(p);
+    const sunCount = 5;
+    for (let i = 0; i < sunCount; i++) {
+      const sun = document.createElement("div");
+      sun.className = "floating-sun";
+      sun.style.top = (Math.random() * 60 + 10) + "vh";
+      sun.style.left = "-200px";
+      sun.style.width = sun.style.height = (Math.random() * 60 + 80) + "px";
+      sun.style.animationDuration = (Math.random() * 20 + 25) + "s";
+      sun.style.animationDelay = (Math.random() * -35) + "s";
+      sun.style.opacity = (Math.random() * 0.45 + 0.35);
+      
+      // Inject standard shiny vector sun SVG
+      sun.innerHTML = `
+        <svg viewBox="0 0 100 100" fill="currentColor" style="width: 100%; height: 100%;">
+          <circle cx="50" cy="50" r="20" />
+          <g stroke="currentColor" stroke-width="6" stroke-linecap="round">
+            <line x1="50" y1="10" x2="50" y2="22" />
+            <line x1="50" y1="90" x2="50" y2="78" />
+            <line x1="10" y1="50" x2="22" y2="50" />
+            <line x1="90" y1="50" x2="78" y2="50" />
+            <line x1="22" y1="22" x2="31" y2="31" />
+            <line x1="78" y1="78" x2="69" y2="69" />
+            <line x1="22" y1="78" x2="31" y2="69" />
+            <line x1="78" y1="22" x2="69" y2="31" />
+          </g>
+        </svg>
+      `;
+      weatherOverlay.appendChild(sun);
     }
   } else if (state === "stable") {
     // Cloudy Effect: Drift clouds slowly across screen
