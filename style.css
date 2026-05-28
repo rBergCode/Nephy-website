@@ -211,12 +211,27 @@ body.dark .logo-icon {
   background: linear-gradient(135deg, #050a14, #123446);
 }
 
-.logo-bg {
+.logo-bg,
+.logo-sun,
+.logo-coin-base,
+.logo-coin-slot {
   transition: fill var(--transition-speed) ease;
 }
 
 body.dark .logo-bg {
   fill: url(#logoGradDark);
+}
+
+body.dark .logo-sun {
+  fill: #42c4ad;
+}
+
+body.dark .logo-coin-base {
+  fill: #42c4ad;
+}
+
+body.dark .logo-coin-slot {
+  fill: #0a8f7a;
 }
 
 .logo-icon svg {
