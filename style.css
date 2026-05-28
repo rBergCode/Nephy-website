@@ -1502,7 +1502,7 @@ body.dark .weather-overlay.state-warning {
 /* Rain Effect */
 .rain-drop {
   position: absolute;
-  background: linear-gradient(transparent, rgba(140, 160, 255, 0.75));
+  background: linear-gradient(transparent, rgba(230, 242, 255, 0.9));
   width: 2px;
   height: 120px;
   opacity: 0.85;
@@ -1523,7 +1523,7 @@ body.dark .weather-overlay.state-warning {
   position: absolute;
   bottom: 0;
   border-radius: 50%;
-  border: 1.5px solid rgba(160, 180, 255, 0.5);
+  border: 1.5px solid rgba(230, 242, 255, 0.7);
   transform: scale(0);
   opacity: 0;
   animation: weather-splash 0.6s ease-out infinite;
