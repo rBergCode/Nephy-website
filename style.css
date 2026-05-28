@@ -211,6 +211,14 @@ body.dark .logo-icon {
   background: linear-gradient(135deg, #050a14, #123446);
 }
 
+.logo-bg {
+  transition: fill var(--transition-speed) ease;
+}
+
+body.dark .logo-bg {
+  fill: url(#logoGradDark);
+}
+
 .logo-icon svg {
   width: 24px;
   height: 24px;
