@@ -389,12 +389,21 @@ themeToggle.addEventListener("click", () => {
   updateDashboardScreenshot();
 });
 
-// Update the active dashboard screenshot file based on language and theme
+// Update the active dashboard screenshot file based on language and theme with a smooth fade transition
 function updateDashboardScreenshot() {
   const dashboardScreenshot = document.getElementById("dashboardScreenshot");
-  if (dashboardScreenshot) {
-    dashboardScreenshot.src = `Dashboard_${currentLang}_${currentTheme}.PNG`;
-  }
+  if (!dashboardScreenshot) return;
+  
+  // Start fade out
+  dashboardScreenshot.style.opacity = "0";
+  
+  // Preload the new WebP image
+  const tempImg = new Image();
+  tempImg.src = `Dashboard_${currentLang}_${currentTheme}.webp`;
+  tempImg.onload = () => {
+    dashboardScreenshot.src = tempImg.src;
+    dashboardScreenshot.style.opacity = "1";
+  };
 }
 
 

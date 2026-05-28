@@ -431,28 +431,6 @@ body.dark .logo-icon {
   border: 1px solid #334155;
 }
 
-/* Inner Screen Design */
-.iphone-screen {
-  width: 100%;
-  height: 100%;
-  background-color: var(--bg-color);
-  background-image: 
-    radial-gradient(circle at bottom right, var(--sky-glow) 0%, transparent 60%),
-    linear-gradient(135deg, var(--sky-top) 0%, var(--sky-middle) 50%, var(--sky-bottom) 100%);
-  padding: 40px 16px 16px 16px;
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-  font-family: var(--font-body);
-  user-select: none;
-  overflow-y: auto;
-  scrollbar-width: none;
-}
-
-.iphone-screen::-webkit-scrollbar {
-  display: none;
-}
-
 .iphone-screen-screenshot {
   width: 100%;
   height: 100%;
@@ -466,66 +444,7 @@ body.dark .logo-icon {
   height: 100%;
   object-fit: cover;
   display: block;
-}
-
-/* Status Bar */
-.status-bar {
-  position: absolute;
-  top: 8px;
-  left: 0;
-  width: 100%;
-  padding: 0 28px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 12px;
-  font-weight: 600;
-  color: var(--text);
-  z-index: 99;
-}
-
-.status-icons {
-  display: flex;
-  gap: 6px;
-  align-items: center;
-}
-
-.status-icon {
-  font-size: 11px;
-}
-
-/* Phone Screen UI Components */
-.phone-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 10px;
-}
-
-.phone-header h2 {
-  font-size: 26px;
-  font-weight: 700;
-  color: var(--text);
-}
-
-.phone-header-icon {
-  color: var(--primary);
-  font-size: 20px;
-}
-
-.month-capsule {
-  display: inline-block;
-  align-self: center;
-  font-family: var(--font-title);
-  font-size: 12px;
-  font-weight: 700;
-  color: var(--primary);
-  background-color: var(--primary-bg);
-  border: 1px solid var(--border-color);
-  padding: 6px 16px;
-  border-radius: 20px;
-  text-align: center;
-  margin: 0 auto;
+  transition: opacity 0.3s ease;
 }
 
 /* Financial Weather Widget */
@@ -587,110 +506,7 @@ body.dark .logo-icon {
   margin-top: 2px;
 }
 
-/* Phone Cards */
-.phone-card {
-  background: var(--surface);
-  border: 1px solid var(--border-color);
-  border-radius: 18px;
-  padding: 16px;
-  box-shadow: 0 6px 20px var(--shadow-color);
-}
 
-.phone-card-title {
-  font-size: 14px;
-  font-weight: 700;
-  margin-bottom: 12px;
-  color: var(--text);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.phone-card-subtitle {
-  font-size: 11px;
-  color: var(--text-secondary);
-  font-weight: 500;
-}
-
-/* Budget Progress Rows */
-.budget-pressure-list {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-.budget-progress-row {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-}
-
-.budget-progress-meta {
-  display: flex;
-  justify-content: space-between;
-  font-size: 12px;
-  font-weight: 600;
-}
-
-.budget-progress-bar-container {
-  height: 6px;
-  background-color: rgba(0, 0, 0, 0.05);
-  border-radius: 3px;
-  overflow: hidden;
-  position: relative;
-}
-
-body.dark .budget-progress-bar-container {
-  background-color: rgba(255, 255, 255, 0.1);
-}
-
-.budget-progress-bar {
-  height: 100%;
-  border-radius: 3px;
-  background-color: var(--primary);
-}
-
-.budget-progress-bar.red {
-  background-color: #ef4444;
-}
-
-.budget-progress-bar.orange {
-  background-color: #f97316;
-}
-
-.budget-progress-label {
-  font-size: 10px;
-  color: var(--text-secondary);
-}
-
-/* Category Spending Grid */
-.category-summary-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 8px;
-}
-
-.category-chip {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 8px 10px;
-  border-radius: 12px;
-  font-size: 11px;
-  font-weight: 600;
-}
-
-.category-dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  flex-shrink: 0;
-}
-
-.category-amt {
-  margin-left: auto;
-  font-weight: 700;
-}
 
 /* Category Specific Variables */
 .cat-groceries {
@@ -747,35 +563,7 @@ body.dark .cat-uncategorized {
   color: #969DE8;
 }
 
-/* Mockup Controls */
-.mockup-controls {
-  display: flex;
-  justify-content: center;
-  gap: 8px;
-  margin-top: 24px;
-  background: var(--surface);
-  padding: 8px;
-  border-radius: 30px;
-  border: 1px solid var(--border-color);
-  box-shadow: 0 8px 24px var(--shadow-color);
-}
 
-.control-tab {
-  padding: 8px 16px;
-  font-family: var(--font-title);
-  font-size: 13px;
-  font-weight: 600;
-  border-radius: 20px;
-  cursor: pointer;
-  border: none;
-  background: transparent;
-  color: var(--text-secondary);
-}
-
-.control-tab.active {
-  background-color: var(--primary);
-  color: #FFFFFF;
-}
 
 /* Feature Showcase Grid */
 .features-title-container {
