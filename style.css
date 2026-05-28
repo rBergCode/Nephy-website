@@ -1540,17 +1540,34 @@ body.dark .weather-overlay.state-warning {
   }
 }
 
-/* Floating Suns */
+/* Floating Suns (rising vertically) */
 .floating-sun {
   position: absolute;
   color: rgba(255, 200, 50, 0.28);
   filter: drop-shadow(0 0 16px rgba(255, 200, 50, 0.3));
-  animation: weather-drift linear infinite;
+  animation: weather-rise ease-in-out infinite;
 }
 
 body.dark .floating-sun {
   color: rgba(255, 180, 0, 0.16);
   filter: drop-shadow(0 0 20px rgba(255, 180, 0, 0.25));
+}
+
+@keyframes weather-rise {
+  0% {
+    transform: translateY(110vh) scale(0.6);
+    opacity: 0;
+  }
+  15% {
+    opacity: 0.8;
+  }
+  85% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(-20vh) scale(1.1);
+    opacity: 0;
+  }
 }
 
 /* Rotating Sun Rays (subtle ambient glow) */

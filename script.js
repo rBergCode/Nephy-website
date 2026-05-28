@@ -665,12 +665,11 @@ function renderWeatherEffect(state) {
     for (let i = 0; i < sunCount; i++) {
       const sun = document.createElement("div");
       sun.className = "floating-sun";
-      sun.style.top = (Math.random() * 60 + 10) + "vh";
-      sun.style.left = "-200px";
-      sun.style.width = sun.style.height = (Math.random() * 60 + 80) + "px";
-      sun.style.animationDuration = (Math.random() * 20 + 25) + "s";
-      sun.style.animationDelay = (Math.random() * -35) + "s";
-      sun.style.opacity = (Math.random() * 0.45 + 0.35);
+      sun.style.left = (Math.random() * 85 + 5) + "vw";
+      sun.style.width = sun.style.height = (Math.random() * 50 + 80) + "px";
+      sun.style.animationDuration = (Math.random() * 12 + 15) + "s";
+      sun.style.animationDelay = (Math.random() * -15) + "s";
+      sun.style.opacity = (Math.random() * 0.4 + 0.3);
       
       // Inject standard shiny vector sun SVG
       sun.innerHTML = `
