@@ -8,7 +8,7 @@ const translations = {
     
     // Hero
     "hero-title": "Weather your finances with <span>Nephy</span>.",
-    "hero-subtitle": "The elegant personal finance app that syncs all your expenses in real-time with your partner. Track personal and shared spending together, split household costs 50/50, and monitor your budget health visually.",
+    "hero-subtitle": "The elegant personal finance app that syncs all your expenses in real-time across your devices. Track your spending, manage category budgets, and monitor your budget health visually.",
     "hero-cta-primary": "Explore Features",
     "hero-cta-secondary": "Learn More",
 
@@ -38,25 +38,25 @@ const translations = {
     "spent-stable": "CHF 310.50 spent this month",
     "spent-warning": "CHF 590.20 spent this month",
     "tap-to-see": "Tap to see this month",
-
+ 
     // Dashboard tab toggles
     "tab-safe": "Safe",
     "tab-track": "On Track",
     "tab-warning": "Warning",
-
+ 
     // Category Amounts for weather states
     "amt-ex-groceries": "CHF 45.00 / CHF 400.00",
     "amt-st-groceries": "CHF 180.00 / CHF 400.00",
     "amt-wa-groceries": "CHF 390.00 / CHF 400.00",
-
+ 
     "amt-ex-dining": "CHF 35.00 / CHF 150.00",
     "amt-st-dining": "CHF 95.00 / CHF 150.00",
     "amt-wa-dining": "CHF 165.00 / CHF 150.00",
-
+ 
     "amt-ex-subs": "CHF 19.90 / CHF 50.00",
     "amt-st-subs": "CHF 35.50 / CHF 50.00",
     "amt-wa-subs": "CHF 48.00 / CHF 50.00",
-
+ 
     // Remaining Texts
     "remaining-ex-groceries": "CHF 355.00 remaining",
     "remaining-st-groceries": "CHF 220.00 remaining",
@@ -69,33 +69,34 @@ const translations = {
     "remaining-ex-subscriptions": "CHF 30.10 remaining",
     "remaining-st-subscriptions": "CHF 14.50 remaining",
     "remaining-wa-subscriptions": "CHF 2.00 remaining",
-
+ 
     // Features Section
     "features-section-title": "Designed for Your Financial Wellness",
     "features-section-subtitle": "Nephy brings smart, beautiful, and secure budgeting layouts to your phone, keeping you aligned on what matters.",
     
-    "feat-split-title": "Personal & Couple Expenses",
-    "feat-split-desc": "Track both individual and shared costs in one shared space. Easily mark household costs as shared to split them 50/50, with both of you having full visibility.",
+    "feat-split-title": "Interactive Monthly Pace",
+    "feat-split-desc": "Monitor your spending speed day by day. Enter your monthly target and adjust the day slider to see your ideal spending pace and remaining allowance.",
     
     "feat-cat-title": "Smart Keyword Auto-Categorization",
     "feat-cat-desc": "Type a merchant and watch it classify itself. Nephy matches user-defined keywords (like 'Migros' or 'Spotify') to automatically assign categories and styles, making tracking effortless.",
     
-    "feat-sync-title": "iCloud Sync & Sharing",
-    "feat-sync-desc": "Secure, real-time synchronization of all expenses between your Apple devices and your partner's using native iCloud sharing. No accounts to create, absolute privacy.",
+    "feat-sync-title": "iCloud Sync across Devices",
+    "feat-sync-desc": "Secure, real-time synchronization of all expenses across your iPhone, iPad, and Mac using native iCloud. No accounts to create, absolute privacy.",
     
     "feat-weather-title": "Visual Financial Weather",
     "feat-weather-desc": "Dry numbers are hard to digest. Nephy introduces 'Financial Weather' to translate your current budget limits into sunny, cloudy, or rainy status indicators so you know your financial state at a glance.",
-
+ 
     // Calculator widget
-    "calc-bill-amount": "Bill Amount",
-    "calc-shared-checkbox": "Shared with Partner (50% Split)",
-    "calc-your-share": "Your Share",
-    "calc-partner-share": "Partner Share",
-
+    "calc-bill-amount": "Monthly Budget Target",
+    "calc-day-label": "Day of the Month",
+    "calc-your-share": "Ideal Spent",
+    "calc-partner-share": "Remaining",
+    "calc-daily-remaining": "Daily Left",
+ 
     // Sandbox widget
     "calc-type-merchant": "Try typing a store name",
     "cat-uncategorized": "Uncategorized",
-
+ 
     // How Section
     "how-section-title": "Setting Up Nephy in 4 Steps",
     "how-section-subtitle": "Get started quickly and experience visual finance sync built right into Apple's ecosystem.",
@@ -104,17 +105,17 @@ const translations = {
     "step1-desc": "Create your custom categories (Groceries, Dining, Transport) and assign keyword triggers to detect merchants automatically.",
     
     "step2-title": "Set Category Budgets",
-    "step2-desc": "Define your monthly spending limits per category. Keep track of how much you and your partner spend to easily stay on budget together.",
+    "step2-desc": "Define your monthly spending limits per category. Keep track of how much you spend to easily stay on budget.",
     
     "step3-title": "Sync Expenses Instantly",
-    "step3-desc": "Every expense you add syncs securely with your partner via iCloud. Mark household costs as shared to automatically split them 50/50 in your budget.",
+    "step3-desc": "Every expense you add syncs securely across all your devices via iCloud. Access your budgets anytime, whether on iPhone, iPad, or Mac.",
     
     "step4-title": "Watch Your Weather",
     "step4-desc": "Open the dashboard to review your financial health. Sunny weather lets you know you are safe to spend, while showers suggest caution.",
-
+ 
     // DL/Footer
     "dl-title": "Start Weathering Your Budget",
-    "dl-subtitle": "Take control of your shared finances, track personal and couple spending together, and experience beautiful, secure sync today.",
+    "dl-subtitle": "Take control of your personal finances, track your category spending, and experience beautiful, secure iCloud sync today.",
     "footer-privacy": "Privacy Policy",
     "footer-support": "Support",
     "footer-rights": "All rights reserved.",
@@ -141,7 +142,7 @@ const translations = {
     
     // Hero
     "hero-title": "Maîtrisez votre budget avec <span>Nephy</span>.",
-    "hero-subtitle": "L'application de finance personnelle élégante qui synchronise toutes vos dépenses avec votre partenaire. Suivez vos frais personnels et de couple ensemble, séparez les coûts communs 50/50, et observez la météo de votre budget visuellement.",
+    "hero-subtitle": "L'application de finance personnelle élégante qui synchronise toutes vos dépenses en temps réel sur vos appareils. Suivez vos frais personnels, gérez vos budgets par catégorie et observez la météo de votre budget visuellement.",
     "hero-cta-primary": "Voir les fonctions",
     "hero-cta-secondary": "En savoir plus",
 
@@ -207,23 +208,24 @@ const translations = {
     "features-section-title": "Conçu pour votre sérénité financière",
     "features-section-subtitle": "Nephy apporte des graphiques de budget intelligents, élégants et sécurisés sur votre téléphone pour vous aider à rester aligné.",
     
-    "feat-split-title": "Dépenses Personnelles & Couple",
-    "feat-split-desc": "Suivez vos dépenses individuelles et communes dans un espace partagé. Marquez facilement les frais de ménage pour les diviser automatiquement par deux, avec une visibilité complète pour les deux partenaires.",
+    "feat-split-title": "Rythme Budgétaire Mensuel",
+    "feat-split-desc": "Suivez votre rythme de dépenses jour après jour. Saisissez votre budget mensuel et ajustez le jour du mois pour voir votre niveau de dépenses idéal et le montant restant.",
     
     "feat-cat-title": "Catégorisation Automatique par Mots-clés",
     "feat-cat-desc": "Saisissez un commerçant et observez-le se classer tout seul. Nephy associe vos mots-clés personnalisés (comme 'Migros' ou 'Spotify') pour attribuer automatiquement la bonne catégorie et la bonne couleur.",
     
-    "feat-sync-title": "Partage et Sync iCloud",
-    "feat-sync-desc": "Synchronisation sécurisée en temps réel de toutes les dépenses entre vos appareils Apple et ceux de votre partenaire via le partage iCloud natif. Aucun compte à créer, confidentialité absolue.",
+    "feat-sync-title": "Synchronisation iCloud",
+    "feat-sync-desc": "Synchronisation sécurisée en temps réel de toutes vos dépenses entre votre iPhone, iPad et Mac via iCloud. Aucun compte à créer, confidentialité absolue.",
     
     "feat-weather-title": "Météo financière visuelle",
     "feat-weather-desc": "Les chiffres bruts sont parfois difficiles à interpréter. Nephy introduit la 'Météo financière' pour traduire vos limites de budget en indicateurs clairs (soleil, nuage, pluie) en un clin d'œil.",
 
     // Calculator widget
-    "calc-bill-amount": "Montant de la facture",
-    "calc-shared-checkbox": "Partagé en couple (Séparation 50/50)",
-    "calc-your-share": "Votre Part",
-    "calc-partner-share": "Part du Partenaire",
+    "calc-bill-amount": "Budget Mensuel",
+    "calc-day-label": "Jour du Mois",
+    "calc-your-share": "Budget Idéal",
+    "calc-partner-share": "Reste du Mois",
+    "calc-daily-remaining": "Reste par Jour",
 
     // Sandbox widget
     "calc-type-merchant": "Saisissez un commerçant pour tester",
@@ -237,17 +239,17 @@ const translations = {
     "step1-desc": "Créez vos catégories sur-mesure (Alimentation, Sorties, Transports) et configurez les mots-clés pour classer vos achats.",
     
     "step2-title": "Définissez vos Budgets",
-    "step2-desc": "Définissez vos plafonds de dépenses mensuels par catégorie. Suivez l'évolution des dépenses à deux pour garder le contrôle de votre budget commun.",
+    "step2-desc": "Définissez vos plafonds de dépenses mensuels par catégorie. Suivez l'évolution de vos dépenses pour garder le contrôle de votre budget.",
     
     "step3-title": "Synchronisez instantanément",
-    "step3-desc": "Chaque dépense ajoutée se synchronise en toute sécurité avec votre partenaire via iCloud. Cochez 'Couple' pour diviser automatiquement les frais communs à 50/50.",
+    "step3-desc": "Chaque dépense ajoutée se synchronise en toute sécurité sur tous vos appareils via iCloud. Accédez à vos budgets à tout moment sur iPhone, iPad ou Mac.",
     
     "step4-title": "Consultez votre Météo",
     "step4-desc": "Ouvrez le tableau de bord pour faire le point. Un grand soleil indique que vous pouvez dépenser sans crainte, la pluie conseille la prudence.",
 
     // DL/Footer
     "dl-title": "Démarrez votre Météo Budgétaire",
-    "dl-subtitle": "Gérez vos budgets à deux, coordonnez vos dépenses de couple et personnelles, et découvrez un suivi budgétaire fluide et partagé dès aujourd'hui.",
+    "dl-subtitle": "Prenez le contrôle de vos finances personnelles, gérez vos budgets par catégorie et découvrez un suivi fluide et sécurisé dès aujourd'hui.",
     "footer-privacy": "Charte de Confidentialité",
     "footer-support": "Support Technique",
     "footer-rights": "Tous droits réservés.",
@@ -408,24 +410,32 @@ function updateDashboardScreenshot() {
 
 
 
-// --- INTERACTIVE SPLIT CALCULATOR ---
+// --- INTERACTIVE MONTHLY PACE CALCULATOR ---
 calcAmount.addEventListener("input", runCalculator);
+calcShared.addEventListener("input", runCalculator);
 calcShared.addEventListener("change", runCalculator);
 
 function runCalculator() {
   const amount = parseFloat(calcAmount.value) || 0;
-  const isShared = calcShared.checked;
+  const day = parseInt(calcShared.value) || 15;
   
-  let yourShare = amount;
-  let partnerShare = 0;
-  
-  if (isShared) {
-    yourShare = amount / 2;
-    partnerShare = amount / 2;
+  const calcDayVal = document.getElementById("calcDayVal");
+  if (calcDayVal) {
+    calcDayVal.textContent = day;
   }
   
-  resYourShare.textContent = `CHF ${yourShare.toFixed(2)}`;
-  resPartnerShare.textContent = `CHF ${partnerShare.toFixed(2)}`;
+  const paceSpent = (amount / 30) * day;
+  const remaining = Math.max(0, amount - paceSpent);
+  const remainingDays = Math.max(1, 30 - day);
+  const dailyRemaining = remaining / remainingDays;
+  
+  resYourShare.textContent = `CHF ${paceSpent.toFixed(2)}`;
+  resPartnerShare.textContent = `CHF ${remaining.toFixed(2)}`;
+  
+  const resDailyRemaining = document.getElementById("resDailyRemaining");
+  if (resDailyRemaining) {
+    resDailyRemaining.textContent = `CHF ${dailyRemaining.toFixed(2)}`;
+  }
 }
 
 // --- INTERACTIVE KEYWORD SANDBOX ---

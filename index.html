@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nephy — Personal & Shared Budgets on iOS</title>
-  <meta name="description" content="Nephy is an elegant iOS budgeting and expense tracking app. Sync personal and couple expenses via iCloud with your partner, and track your financial weather.">
+  <title>Nephy — Elegant Personal Budgeting on iOS</title>
+  <meta name="description" content="Nephy is an elegant iOS budgeting and expense tracking app. Sync your personal expenses via iCloud across all your devices, and track your financial weather.">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -81,7 +81,7 @@
     <div class="container hero-grid">
       <div class="hero-content">
         <h1 data-i18n="hero-title">Weather your finances with <span>Nephy</span>.</h1>
-        <p data-i18n="hero-subtitle">The elegant personal finance app that syncs all your expenses in real-time with your partner. Track personal and shared spending together, split household costs 50/50, and monitor your budget health visually.</p>
+        <p data-i18n="hero-subtitle">The elegant personal finance app that syncs all your expenses in real-time across your devices. Track your spending, manage category budgets, and monitor your budget health visually.</p>
         <div class="hero-ctas">
           <a href="#features" class="btn btn-primary" data-i18n="hero-cta-primary">Explore Features</a>
           <a href="#how-it-works" class="btn btn-secondary" data-i18n="hero-cta-secondary">Learn More</a>
@@ -117,36 +117,41 @@
       </div>
 
       <div class="features-grid">
-        <!-- Feature 1: Me vs Couple Split -->
+        <!-- Feature 1: Interactive Monthly Pace -->
         <div class="feature-card">
-          <div class="feature-icon">👥</div>
-          <h3 data-i18n="feat-split-title">Personal & Couple Expenses</h3>
-          <p data-i18n="feat-split-desc">Track both individual and shared costs in one shared space. Easily mark household costs as shared to split them 50/50, with both of you having full visibility.</p>
+          <div class="feature-icon">📈</div>
+          <h3 data-i18n="feat-split-title">Interactive Monthly Pace</h3>
+          <p data-i18n="feat-split-desc">Monitor your spending speed day by day. Enter your monthly target and adjust the day slider to see your ideal spending pace and remaining allowance.</p>
           
-          <!-- Interactive Widget: Calculator -->
+          <!-- Interactive Widget: Pace Calculator -->
           <div class="calc-container">
             <div class="form-group">
-              <label for="calcAmount" data-i18n="calc-bill-amount">Bill Amount</label>
+              <label for="calcAmount" data-i18n="calc-bill-amount">Monthly Budget Target</label>
               <div class="input-wrapper">
                 <span class="input-currency">CHF</span>
-                <input type="number" id="calcAmount" class="form-input" value="120.00" min="0" step="10">
+                <input type="number" id="calcAmount" class="form-input" value="1200.00" min="0" step="50">
               </div>
             </div>
-            <div class="form-group" style="margin-bottom: 0;">
-              <label class="checkbox-label">
-                <input type="checkbox" id="calcShared" checked>
-                <span data-i18n="calc-shared-checkbox">Shared with Partner (50% Split)</span>
-              </label>
+            <div class="form-group" style="margin-bottom: 12px;">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+                <span style="font-size: 14px; font-weight: 600; color: var(--text);" data-i18n="calc-day-label">Day of the Month</span>
+                <strong id="calcDayVal" style="color: var(--primary); font-size: 14px;">15</strong>
+              </div>
+              <input type="range" id="calcShared" class="premium-slider" min="1" max="30" value="15">
             </div>
             
             <div class="calc-results">
               <div class="calc-res-box">
-                <span class="calc-res-title" data-i18n="calc-your-share">Your Share</span>
-                <div class="calc-res-value accent" id="resYourShare">CHF 60.00</div>
+                <span class="calc-res-title" data-i18n="calc-your-share">Ideal Spent</span>
+                <div class="calc-res-value accent" id="resYourShare">CHF 600.00</div>
               </div>
               <div class="calc-res-box">
-                <span class="calc-res-title" data-i18n="calc-partner-share">Partner Share</span>
-                <div class="calc-res-value" id="resPartnerShare">CHF 60.00</div>
+                <span class="calc-res-title" data-i18n="calc-partner-share">Remaining</span>
+                <div class="calc-res-value" id="resPartnerShare">CHF 600.00</div>
+              </div>
+              <div class="calc-res-box">
+                <span class="calc-res-title" data-i18n="calc-daily-remaining">Daily Left</span>
+                <div class="calc-res-value" id="resDailyRemaining">CHF 40.00</div>
               </div>
             </div>
           </div>
@@ -177,16 +182,16 @@
           </div>
         </div>
 
-        <!-- Feature 3: iCloud Sync & Sharing -->
+        <!-- Feature 3: iCloud Sync -->
         <div class="feature-card">
           <div class="feature-icon">☁️</div>
-          <h3 data-i18n="feat-sync-title">iCloud Sync & Sharing</h3>
-          <p data-i18n="feat-sync-desc">Secure, real-time synchronization between your Apple devices and your partner's. Nephy uses Apple's native iCloud sharing, which means no accounts to create and absolute privacy.</p>
+          <h3 data-i18n="feat-sync-title">iCloud Sync across Devices</h3>
+          <p data-i18n="feat-sync-desc">Secure, real-time synchronization of all expenses across your iPhone, iPad, and Mac using native iCloud. No accounts to create, absolute privacy.</p>
           
           <!-- Visual Widget: iCloud Graph -->
           <div class="icloud-graphic">
             <div class="phone-wireframe">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
             </div>
             <div class="sync-line left">
               <div class="sync-pulse"></div>
@@ -196,7 +201,7 @@
               <div class="sync-pulse" style="animation-delay: 1s;"></div>
             </div>
             <div class="phone-wireframe">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="12" rx="2" ry="2"></rect><line x1="2" y1="20" x2="22" y2="20"></line><line x1="12" y1="20" x2="12" y2="16"></line></svg>
             </div>
           </div>
         </div>
@@ -280,14 +285,14 @@
           <div class="timeline-badge">2</div>
           <div class="timeline-content">
             <h3 data-i18n="step2-title">Set Category Budgets</h3>
-            <p data-i18n="step2-desc">Define your monthly spending limits per category. Keep track of how much you and your partner spend to easily stay on budget together.</p>
+            <p data-i18n="step2-desc">Define your monthly spending limits per category. Keep track of how much you spend to easily stay on budget.</p>
           </div>
         </div>
         <div class="timeline-item">
           <div class="timeline-badge">3</div>
           <div class="timeline-content">
             <h3 data-i18n="step3-title">Sync Expenses Instantly</h3>
-            <p data-i18n="step3-desc">Every expense you add syncs securely with your partner via iCloud. Mark household costs as shared to automatically split them 50/50 in your budget.</p>
+            <p data-i18n="step3-desc">Every expense you add syncs securely across all your devices via iCloud. Access your budgets anytime, whether on iPhone, iPad, or Mac.</p>
           </div>
         </div>
         <div class="timeline-item">
@@ -305,7 +310,7 @@
   <section id="download" class="download-section">
     <div class="container download-wrapper">
       <h2 data-i18n="dl-title">Start Weathering Your Budget</h2>
-      <p data-i18n="dl-subtitle">Take control of your shared finances, track personal and couple spending together, and experience beautiful, secure sync today.</p>
+      <p data-i18n="dl-subtitle">Take control of your personal finances, track your category spending, and experience beautiful, secure iCloud sync today.</p>
       <div class="download-badge-container">
         <a href="#" class="app-store-badge">
           <img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg" alt="Download on the App Store">

@@ -355,6 +355,9 @@ body.dark .logo-coin-slot {
   background: linear-gradient(135deg, var(--primary), var(--secondary));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  display: inline-block;
+  padding-bottom: 0.1em;
+  margin-bottom: -0.1em;
 }
 
 .hero-content p {
@@ -731,8 +734,8 @@ body.dark .cat-uncategorized {
 
 .calc-results {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 12px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
   margin-top: 18px;
   border-top: 1px solid var(--border-color);
   padding-top: 16px;
@@ -741,7 +744,7 @@ body.dark .cat-uncategorized {
 .calc-res-box {
   background: var(--surface);
   border-radius: 12px;
-  padding: 10px 12px;
+  padding: 10px 6px;
   text-align: center;
   border: 1px solid rgba(0,0,0,0.05);
 }
