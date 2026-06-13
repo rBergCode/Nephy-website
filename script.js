@@ -153,7 +153,8 @@ const translations = {
     "tuto-step7-title": "Set Title",
     "tuto-step7-desc": "Tap Title. Scroll to Shortcut Input. Tap it, tap it again, then choose Merchant.",
     "tuto-step8-title": "Finish",
-    "tuto-step8-desc": "Turn off Show When Run. Tap Done in the top right."
+    "tuto-step8-desc": "Turn off Show When Run. Tap Done in the top right.",
+    "tuto-video-credit": "Video edited with Clideo"
   },
   fr: {
     // Navigation
@@ -308,7 +309,8 @@ const translations = {
     "tuto-step7-title": "Définir le titre",
     "tuto-step7-desc": "Appuyez sur Titre. Faites défiler jusqu'à Entrée de raccourci. Appuyez dessus, appuyez à nouveau, puis choisissez Commerçant.",
     "tuto-step8-title": "Terminer",
-    "tuto-step8-desc": "Décochez Afficher lors de l'exécution. Appuyez sur OK en haut à droite."
+    "tuto-step8-desc": "Décochez Afficher lors de l'exécution. Appuyez sur OK en haut à droite.",
+    "tuto-video-credit": "Vidéo éditée avec Clideo"
   }
 };
 
