@@ -417,6 +417,7 @@ body.dark .logo-coin-slot {
               inset 0 0 4px 2px rgba(255, 255, 255, 0.1);
   position: relative;
   overflow: hidden;
+  isolation: isolate;
 }
 
 .iphone-notch {
@@ -429,10 +430,12 @@ body.dark .logo-coin-slot {
   background-color: var(--iphone-bezel);
   border-bottom-left-radius: 18px;
   border-bottom-right-radius: 18px;
-  z-index: 100;
+  z-index: 3;
   display: flex;
   justify-content: center;
   align-items: center;
+  box-shadow: 0 4px 0 var(--iphone-bezel);
+  pointer-events: none;
 }
 
 .iphone-notch::before {
@@ -458,18 +461,23 @@ body.dark .logo-coin-slot {
 }
 
 .iphone-screen-screenshot {
-  width: 100%;
-  height: 100%;
+  position: absolute;
+  inset: 0;
+  z-index: 1;
   background-color: var(--bg-color);
   user-select: none;
   overflow: hidden;
+  border-radius: 34px;
 }
 
 .iphone-screenshot-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: top center;
   display: block;
+  position: relative;
+  z-index: 1;
   transition: opacity 0.3s ease;
 }
 
@@ -1427,4 +1435,118 @@ body.dark .floating-cloud {
   100% {
     transform: translateX(105vw);
   }
+}
+
+/* Tutorial Section Styles */
+.tutorial-section {
+  padding: 80px 0;
+  border-top: 1px solid var(--border-color);
+  background-color: var(--section-bg);
+  position: relative;
+}
+
+.tutorial-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 48px;
+  align-items: start;
+  margin-top: 40px;
+}
+
+.tutorial-content {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.tutorial-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.tuto-step-item {
+  display: flex;
+  gap: 16px;
+  background: var(--surface);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 4px 12px var(--shadow-color);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.tuto-step-item:hover, .tuto-step-item.active {
+  transform: translateY(-2px);
+  border-color: var(--primary);
+  box-shadow: 0 8px 24px var(--shadow-color);
+  background: var(--surface-opaque);
+}
+
+.tuto-step-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: var(--primary);
+  color: #fff;
+  font-weight: 700;
+  font-size: 14px;
+  flex-shrink: 0;
+}
+
+.tuto-step-details h4 {
+  font-size: 18px;
+  color: var(--card-text-primary);
+  margin-bottom: 4px;
+}
+
+.tuto-step-details p {
+  font-size: 14px;
+  color: var(--card-text-secondary);
+  line-height: 1.5;
+  margin: 0;
+}
+
+.tutorial-media {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: sticky;
+  top: 100px;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .tutorial-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .tutorial-media {
+    position: static;
+  }
+}
+
+/* Tutorial iPhone Frame adjustments to match video aspect ratio (448x976) */
+.iphone-frame.tuto-frame {
+  height: 697px;
+}
+
+.iphone-frame.tuto-frame .iphone-notch {
+  width: 138px;
+  height: 35px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  transform: translateX(calc(-50% - 3px));
+}
+
+.iphone-frame.tuto-frame .iphone-notch::before {
+  top: 11px;
+}
+
+.iphone-frame.tuto-frame .iphone-notch::after {
+  top: 9px;
 }

@@ -4,6 +4,7 @@ const translations = {
     // Navigation
     "nav-features": "Features",
     "nav-how-it-works": "How It Works",
+    "nav-tutorial": "Tutorial",
     "nav-download": "Download App",
     
     // Hero
@@ -132,12 +133,33 @@ const translations = {
     "feat-shortcuts-desc": "No more manual logging. Nephy integrates natively with Apple App Shortcuts and Intents. Set up simple automations to log expenses automatically when you pay with Apple Pay, receive a bank SMS, or just ask Siri.",
     "shortcut-title-trigger": "When I tap to pay or get a bank notification...",
     "shortcut-title-action": "Log in Nephy automatically",
-    "shortcut-desc-action": "Amount, category, and date are resolved instantly with zero clicks."
+    "shortcut-desc-action": "Amount, category, and date are resolved instantly with zero clicks.",
+
+    // Tutorial
+    "tuto-title": "Siri & Shortcuts Automation Tutorial",
+    "tuto-subtitle": "Follow these 8 simple steps to automate logging your expenses in Nephy every time you tap to pay with Apple Pay.",
+    "tuto-step1-title": "Open Shortcuts",
+    "tuto-step1-desc": "Tap Automation, then tap +.",
+    "tuto-step2-title": "Choose Wallet",
+    "tuto-step2-desc": "Tap Wallet, then tap the card or cards you use to track expenses.",
+    "tuto-step3-title": "Select Categories",
+    "tuto-step3-desc": "Check every category. Leave Filter Merchants as it is.",
+    "tuto-step4-title": "Run Automatically",
+    "tuto-step4-desc": "Tap Run Immediately, not Run After Confirmation. Notify When Run is optional.",
+    "tuto-step5-title": "Create Shortcut",
+    "tuto-step5-desc": "Tap Create New Shortcut. Search Nephy. Tap Add Expense.",
+    "tuto-step6-title": "Set Amount",
+    "tuto-step6-desc": "Tap Amount. Scroll to Shortcut Input, tap it, tap it again, then choose Amount.",
+    "tuto-step7-title": "Set Title",
+    "tuto-step7-desc": "Tap Title. Scroll to Shortcut Input. Tap it, tap it again, then choose Merchant.",
+    "tuto-step8-title": "Finish",
+    "tuto-step8-desc": "Turn off Show When Run. Tap Done in the top right."
   },
   fr: {
     // Navigation
     "nav-features": "Fonctionnalités",
     "nav-how-it-works": "Comment ça marche",
+    "nav-tutorial": "Tutoriel",
     "nav-download": "Télécharger l'app",
     
     // Hero
@@ -266,7 +288,27 @@ const translations = {
     "feat-shortcuts-desc": "Fini la saisie manuelle. Nephy s'intègre nativement avec les App Shortcuts et Intents d'Apple. Configurez des automatisations pour saisir vos dépenses automatiquement dès que vous payez avec Apple Pay, recevez un SMS bancaire, ou demandez à Siri.",
     "shortcut-title-trigger": "Quand je paie ou reçois une notification bancaire...",
     "shortcut-title-action": "Enregistrer dans Nephy automatiquement",
-    "shortcut-desc-action": "Le montant, la catégorie et la date sont saisis instantanément sans aucun clic."
+    "shortcut-desc-action": "Le montant, la catégorie et la date sont saisis instantanément sans aucun clic.",
+
+    // Tutorial
+    "tuto-title": "Tutoriel d'automatisation des raccourcis Siri",
+    "tuto-subtitle": "Suivez ces 8 étapes simples pour enregistrer automatiquement vos dépenses dans Nephy dès que vous utilisez Apple Pay.",
+    "tuto-step1-title": "Ouvrir Raccourcis",
+    "tuto-step1-desc": "Appuyez sur Automatisation, puis sur +.",
+    "tuto-step2-title": "Choisir Wallet",
+    "tuto-step2-desc": "Appuyez sur Wallet (Cartes), puis sélectionnez la ou les cartes bancaires que vous utilisez pour suivre vos dépenses.",
+    "tuto-step3-title": "Sélectionner les catégories",
+    "tuto-step3-desc": "Cochez toutes les catégories. Laissez l'option Filtrer les commerçants telle quelle.",
+    "tuto-step4-title": "Exécuter automatiquement",
+    "tuto-step4-desc": "Sélectionnez Exécuter immédiatement, pas Exécuter après confirmation. Signaler l'exécution est facultatif.",
+    "tuto-step5-title": "Créer le raccourci",
+    "tuto-step5-desc": "Appuyez sur Nouvelle automatisation vierge. Recherchez Nephy. Sélectionnez Ajouter une dépense.",
+    "tuto-step6-title": "Définir le montant",
+    "tuto-step6-desc": "Appuyez sur Montant. Faites défiler jusqu'à Entrée de raccourci, appuyez dessus, appuyez à nouveau, puis choisissez Montant.",
+    "tuto-step7-title": "Définir le titre",
+    "tuto-step7-desc": "Appuyez sur Titre. Faites défiler jusqu'à Entrée de raccourci. Appuyez dessus, appuyez à nouveau, puis choisissez Commerçant.",
+    "tuto-step8-title": "Terminer",
+    "tuto-step8-desc": "Décochez Afficher lors de l'exécution. Appuyez sur OK en haut à droite."
   }
 };
 
@@ -337,6 +379,9 @@ function init() {
 
   // Initialize weather overlay effect
   initWeatherOverlay();
+
+  // Initialize step highlighting for tutorial
+  initStepHighlighting();
 }
 
 // --- LANGUAGE SWITCHER ---
@@ -371,6 +416,9 @@ function applyLanguage(lang) {
 
   // Sync screenshot with selected language
   updateDashboardScreenshot();
+
+  // Sync tutorial video with selected language
+  updateTutorialVideo(lang);
 }
 
 // --- THEME SWITCHER ---
@@ -406,6 +454,18 @@ function updateDashboardScreenshot() {
     dashboardScreenshot.src = tempImg.src;
     dashboardScreenshot.style.opacity = "1";
   };
+}
+
+// Update the tutorial video file source based on language
+function updateTutorialVideo(lang) {
+  const tutorialVideo = document.getElementById("tutorialVideo");
+  if (tutorialVideo) {
+    const videoSrc = lang === "en" ? "shortcut-tuto-eng.mov" : "shortcut-tuto-fr.mov";
+    if (tutorialVideo.getAttribute("src") !== videoSrc) {
+      tutorialVideo.src = videoSrc;
+      tutorialVideo.load();
+    }
+  }
 }
 
 
@@ -741,6 +801,16 @@ function renderWeatherEffect(state) {
       weatherOverlay.appendChild(splash);
     }
   }
+}
+
+function initStepHighlighting() {
+  const steps = document.querySelectorAll(".tuto-step-item");
+  steps.forEach(step => {
+    step.addEventListener("click", () => {
+      steps.forEach(s => s.classList.remove("active"));
+      step.classList.add("active");
+    });
+  });
 }
 
 // Initialize on load
