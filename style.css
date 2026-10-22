@@ -793,6 +793,7 @@ body.dark .calc-res-box {
 }
 
 .currency-options {
+  margin-top: 4px;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 8px;
@@ -852,15 +853,20 @@ body.dark .calc-res-box {
   color: var(--text-secondary);
 }
 
+.feature-card .currency-note {
+  margin: 8px 0 0;
+  font-size: 11px;
+  color: var(--text-secondary);
+  opacity: 0.8;
+  flex: none;
+}
+
 .currency-preview-row strong {
   color: var(--text);
   font-variant-numeric: tabular-nums;
 }
 
 .currency-preview-row.total {
-  margin-top: 6px;
-  border-top: 1px dashed var(--border-color);
-  padding-top: 12px;
   font-weight: 600;
   color: var(--text);
 }
