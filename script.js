@@ -86,6 +86,14 @@ const translations = {
     
     "feat-weather-title": "Visual Financial Weather",
     "feat-weather-desc": "Dry numbers are hard to digest. Nephy introduces 'Financial Weather' to translate your current budget limits into sunny, cloudy, or rainy status indicators so you know your financial state at a glance.",
+
+    "feat-currency-title": "Budget in Your Currency",
+    "feat-currency-desc": "Nephy supports four currencies: Swiss francs, euros, US dollars, and Israeli shekels. Pick yours and every expense, budget, and widget is formatted the way you expect.",
+    "currency-chf": "Swiss Franc",
+    "currency-eur": "Euro",
+    "currency-usd": "US Dollar",
+    "currency-ils": "Israeli Shekel",
+    "currency-monthly-budget": "Monthly budget",
  
     // Calculator widget
     "calc-bill-amount": "Monthly Budget Target",
@@ -243,6 +251,14 @@ const translations = {
     "feat-weather-title": "Météo financière visuelle",
     "feat-weather-desc": "Les chiffres bruts sont parfois difficiles à interpréter. Nephy introduit la 'Météo financière' pour traduire vos limites de budget en indicateurs clairs (soleil, nuage, pluie) en un clin d'œil.",
 
+    "feat-currency-title": "Votre budget dans votre devise",
+    "feat-currency-desc": "Nephy prend en charge quatre devises : le franc suisse, l'euro, le dollar américain et le shekel israélien. Choisissez la vôtre et chaque dépense, budget et widget s'affiche au bon format.",
+    "currency-chf": "Franc suisse",
+    "currency-eur": "Euro",
+    "currency-usd": "Dollar américain",
+    "currency-ils": "Shekel israélien",
+    "currency-monthly-budget": "Budget mensuel",
+
     // Calculator widget
     "calc-bill-amount": "Budget Mensuel",
     "calc-day-label": "Jour du Mois",
@@ -316,6 +332,7 @@ const translations = {
 
 // Global State
 let currentLang = localStorage.getItem("lang") || "en";
+let currentCurrency = localStorage.getItem("currency") || "CHF";
 let currentTheme = localStorage.getItem("theme") || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
 let weatherPrevState = "";
 let isHoveringWeatherFeature = false;
@@ -368,8 +385,8 @@ function init() {
   // Apply initial language translation
   applyLanguage(currentLang);
 
-  // Initialize calculator
-  runCalculator();
+  // Apply initial currency (also runs the calculator)
+  applyCurrency(currentCurrency);
 
   // Initialize Keyword sandbox
   runSandbox();
@@ -415,6 +432,9 @@ function applyLanguage(lang) {
 
   // Re-run sandbox to update matched label translation
   runSandbox();
+
+  // Re-format amounts for the selected language's number conventions
+  applyCurrency(currentCurrency);
 
   // Sync screenshot with selected language
   updateDashboardScreenshot();
@@ -491,13 +511,59 @@ function runCalculator() {
   const remainingDays = Math.max(1, 30 - day);
   const dailyRemaining = remaining / remainingDays;
   
-  resYourShare.textContent = `CHF ${paceSpent.toFixed(2)}`;
-  resPartnerShare.textContent = `CHF ${remaining.toFixed(2)}`;
+  resYourShare.textContent = formatCurrency(paceSpent);
+  resPartnerShare.textContent = formatCurrency(remaining);
   
   const resDailyRemaining = document.getElementById("resDailyRemaining");
   if (resDailyRemaining) {
-    resDailyRemaining.textContent = `CHF ${dailyRemaining.toFixed(2)}`;
+    resDailyRemaining.textContent = formatCurrency(dailyRemaining);
   }
+}
+
+// --- MULTI-CURRENCY SUPPORT (CHF, EUR, USD, ILS) ---
+const supportedCurrencies = {
+  CHF: "CHF",
+  EUR: "€",
+  USD: "$",
+  ILS: "₪"
+};
+const currencyOptions = document.querySelectorAll(".currency-option");
+
+currencyOptions.forEach(option => {
+  option.addEventListener("click", () => {
+    currentCurrency = option.dataset.currency;
+    localStorage.setItem("currency", currentCurrency);
+    applyCurrency(currentCurrency);
+  });
+});
+
+function formatCurrency(amount) {
+  const locale = currentLang === "fr" ? "fr-CH" : "en-US";
+  return new Intl.NumberFormat(locale, { style: "currency", currency: currentCurrency }).format(amount);
+}
+
+function applyCurrency(currency) {
+  if (!supportedCurrencies[currency]) {
+    currency = "CHF";
+  }
+  currentCurrency = currency;
+
+  currencyOptions.forEach(option => {
+    const isActive = option.dataset.currency === currency;
+    option.classList.toggle("active", isActive);
+    option.setAttribute("aria-pressed", isActive);
+  });
+
+  document.querySelectorAll(".currency-amount").forEach(el => {
+    el.textContent = formatCurrency(parseFloat(el.dataset.amount));
+  });
+
+  const calcCurrency = document.querySelector(".calc-container .input-currency");
+  if (calcCurrency) {
+    calcCurrency.textContent = supportedCurrencies[currency];
+  }
+
+  runCalculator();
 }
 
 // --- INTERACTIVE KEYWORD SANDBOX ---

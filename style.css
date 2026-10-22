@@ -780,6 +780,107 @@ body.dark .calc-res-box {
   color: var(--primary);
 }
 
+/* Multi-Currency Picker */
+.currency-feature-text p {
+  margin-bottom: 0;
+}
+
+.currency-demo {
+  background: var(--section-bg);
+  border-radius: 16px;
+  padding: 20px;
+  border: 1px solid var(--border-color);
+}
+
+.currency-options {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+}
+
+.currency-option {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 12px 6px;
+  border-radius: 14px;
+  border: 1px solid var(--border-color);
+  background-color: var(--surface);
+  color: var(--text-secondary);
+  font-family: var(--font-body);
+  cursor: pointer;
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.currency-option:hover {
+  background-color: var(--primary-bg);
+  color: var(--primary);
+}
+
+.currency-option.active {
+  background-color: var(--primary-bg);
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+.currency-symbol {
+  font-family: var(--font-title);
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.currency-name {
+  font-size: 11px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.currency-preview {
+  margin-top: 16px;
+  border-top: 1px solid var(--border-color);
+  padding-top: 12px;
+}
+
+.currency-preview-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 6px 0;
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+
+.currency-preview-row strong {
+  color: var(--text);
+  font-variant-numeric: tabular-nums;
+}
+
+.currency-preview-row.total {
+  margin-top: 6px;
+  border-top: 1px dashed var(--border-color);
+  padding-top: 12px;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.currency-preview-row.total strong {
+  color: var(--primary);
+}
+
+@media (max-width: 992px) {
+  .currency-demo {
+    margin-top: 28px;
+  }
+}
+
+@media (max-width: 480px) {
+  .currency-options {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 /* Auto-categorization Sandbox */
 .keyword-sandbox {
   background: var(--section-bg);

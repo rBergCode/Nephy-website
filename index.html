@@ -233,6 +233,56 @@
           </div>
         </div>
 
+        <!-- Feature 5: Multi-Currency Support -->
+        <div class="feature-card span-2">
+          <div class="currency-feature-text">
+            <div class="feature-icon">💱</div>
+            <h3 data-i18n="feat-currency-title">Budget in Your Currency</h3>
+            <p data-i18n="feat-currency-desc">Nephy supports four currencies: Swiss francs, euros, US dollars, and Israeli shekels. Pick yours and every expense, budget, and widget is formatted the way you expect.</p>
+          </div>
+
+          <!-- Interactive Widget: Currency Picker -->
+          <div class="currency-demo">
+            <div class="currency-options" role="group" aria-label="Currency">
+              <button type="button" class="currency-option" data-currency="CHF" aria-pressed="false">
+                <span class="currency-symbol">CHF</span>
+                <span class="currency-name" data-i18n="currency-chf">Swiss Franc</span>
+              </button>
+              <button type="button" class="currency-option" data-currency="EUR" aria-pressed="false">
+                <span class="currency-symbol">€</span>
+                <span class="currency-name" data-i18n="currency-eur">Euro</span>
+              </button>
+              <button type="button" class="currency-option" data-currency="USD" aria-pressed="false">
+                <span class="currency-symbol">$</span>
+                <span class="currency-name" data-i18n="currency-usd">US Dollar</span>
+              </button>
+              <button type="button" class="currency-option" data-currency="ILS" aria-pressed="false">
+                <span class="currency-symbol">₪</span>
+                <span class="currency-name" data-i18n="currency-ils">Israeli Shekel</span>
+              </button>
+            </div>
+
+            <div class="currency-preview">
+              <div class="currency-preview-row">
+                <span data-i18n="cat-groceries">Groceries</span>
+                <strong class="currency-amount" data-amount="84.50"></strong>
+              </div>
+              <div class="currency-preview-row">
+                <span data-i18n="cat-dining">Restaurants & Coffee</span>
+                <strong class="currency-amount" data-amount="32.00"></strong>
+              </div>
+              <div class="currency-preview-row">
+                <span data-i18n="cat-subscriptions">Subscriptions</span>
+                <strong class="currency-amount" data-amount="19.90"></strong>
+              </div>
+              <div class="currency-preview-row total">
+                <span data-i18n="currency-monthly-budget">Monthly budget</span>
+                <strong class="currency-amount" data-amount="1200"></strong>
+              </div>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
